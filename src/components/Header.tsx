@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header className="site-header">
-      <span>StreamMark</span>
+      <h1>StreamMark</h1>
       <p>Your hub for Educational, Fun-Facts, Movies & Music</p>
     </header>
   )
