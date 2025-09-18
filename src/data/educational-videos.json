@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "title": "What is an Algorithm?",
+    "channel": "Computerphile"
+  },
+  {
+    "id": "2",
+    "title": "Big O Notation Explained",
+    "channel": "freeCodeCamp.org"
+  },
+  {
+    "id": "3",
+    "title": "Intro to Git and GitHub",
+    "channel": "Traversy Media"
+  }
+]
