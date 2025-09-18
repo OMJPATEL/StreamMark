@@ -1,7 +1,6 @@
-import React from 'react';
-import musicData from '../assets/music.json';
+import musicData from '../../data/music.json';
 
-export default function Music() {
+function Music() {
   return (
     <section className="music-section">
       <h1>Music</h1>
@@ -31,3 +30,5 @@ export default function Music() {
     </section>
   );
 }
+
+export default Music;
