@@ -13,5 +13,95 @@
     "id": "3",
     "title": "Intro to Git and GitHub",
     "channel": "Traversy Media"
+  },
+  {
+    "id": "4",
+    "title": "Sorting Algorithms Visualized",
+    "channel": "CS50"
+  },
+  {
+    "id": "5",
+    "title": "How Does the Internet Work?",
+    "channel": "Techquickie"
+  },
+  {
+    "id": "6",
+    "title": "Understanding Hash Tables",
+    "channel": "Computerphile"
+  },
+  {
+    "id": "7",
+    "title": "Learn Python in One Video",
+    "channel": "Programming with Mosh"
+  },
+  {
+    "id": "8",
+    "title": "REST API Tutorial",
+    "channel": "Academind"
+  },
+  {
+    "id": "9",
+    "title": "Data Structures Crash Course",
+    "channel": "freeCodeCamp.org"
+  },
+  {
+    "id": "10",
+    "title": "Machine Learning Basics",
+    "channel": "StatQuest with Josh Starmer"
+  },
+  {
+    "id": "11",
+    "title": "How Computers Calculate",
+    "channel": "Computerphile"
+  },
+  {
+    "id": "12",
+    "title": "Intro to JavaScript",
+    "channel": "The Net Ninja"
+  },
+  {
+    "id": "13",
+    "title": "What is Docker?",
+    "channel": "Fireship"
+  },
+  {
+    "id": "14",
+    "title": "SQL Basics Tutorial",
+    "channel": "Programming with Mosh"
+  },
+  {
+    "id": "15",
+    "title": "Blockchain Explained",
+    "channel": "Simply Explained"
+  },
+  {
+    "id": "16",
+    "title": "How Operating Systems Work",
+    "channel": "Computerphile"
+  },
+  {
+    "id": "17",
+    "title": "CSS Flexbox in 20 Minutes",
+    "channel": "Traversy Media"
+  },
+  {
+    "id": "18",
+    "title": "Introduction to Cloud Computing",
+    "channel": "IBM Technology"
+  },
+  {
+    "id": "19",
+    "title": "Neural Networks Demystified",
+    "channel": "Welch Labs"
+  },
+  {
+    "id": "20",
+    "title": "Kubernetes Explained",
+    "channel": "TechWorld with Nana"
+  },
+  {
+    "id": "21",
+    "title": "The History of Programming Languages",
+    "channel": "Computerphile"
   }
 ]
