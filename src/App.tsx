@@ -2,7 +2,7 @@ import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import EducationalComponent from "../src/components/Educational/Educational_Component"
-
+import FunFacts from "./components/FunFacts/FunFacts"
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <NavBar />
       <main>
       <EducationalComponent />
-
+      <FunFacts />
       </main>
       <Footer />
     </div>

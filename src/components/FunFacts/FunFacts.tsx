@@ -1,4 +1,5 @@
 import funfacts from "../../data/funfacts.json"
+import VideoCard from "./VideoCard";
 
 function FunFacts() {
   return (

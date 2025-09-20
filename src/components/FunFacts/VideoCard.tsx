@@ -1,4 +1,14 @@
-function VideoCard({ video }) {
+type Video = {
+  url: string;
+  title: string;
+  description: string;
+};
+
+interface VideoCardProps {
+  video: Video;
+}
+
+function VideoCard({ video }: VideoCardProps) {
   return (
     <div className="card">
       <iframe
