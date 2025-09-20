@@ -9,6 +9,9 @@ function FunFacts() {
         <article key={category}>
           <h2>{category}</h2>
           <div className="grid">
+            {videos.map((video, index) => (
+              <VideoCard key={category + index} video={video} />
+            ))}
           </div>
         </article>
       ))}
