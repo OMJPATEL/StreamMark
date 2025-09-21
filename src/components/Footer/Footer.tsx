@@ -1,9 +1,13 @@
 function Footer() {
   return (
     <footer>
-      <p>Team Members: Karanveer | Aakash | Akash Kumar | Om Patel</p>
-      <p>&copy; {new Date().getFullYear()} StreamMark</p>
+      <p className="team-members"> 
+        Team Members: Karanveer | Aakash | Akash Kumar | Om Patel
+      </p>
+      <p className="footer-copy">
+        &copy; {new Date().getFullYear()} StreamMark
+      </p>
     </footer>
   )
 }
-export default Footer
+export default Footer;
