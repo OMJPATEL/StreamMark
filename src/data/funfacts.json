@@ -1,0 +1,59 @@
+{
+  "Everyday Science": [
+    {
+      "url": "https://www.youtube.com/embed/WL-GEgNJU_M",
+      "title": "25 Scientific Facts We See Everyday",
+      "description": "Discover everyday science facts you probably didn't know."
+    },
+    {
+      "url": "https://www.youtube.com/embed/JkIcZxal3Fg",
+      "title": "15 Minutes of Science Facts",
+      "description": "Fun facts with appearances by creators like Mark Rober."
+    }
+  ],
+  "Space": [
+    {
+      "url": "https://www.youtube.com/embed/pjaN2WHAHVo",
+      "title": "14 Minutes of Mind-Blowing Space Facts",
+      "description": "Astrophysicist Brian Cox blows your mind with facts."
+    },
+    {
+      "url": "https://www.youtube.com/embed/K4_m68B_RWw",
+      "title": "30 Mind-Blowing Solar System Secrets",
+      "description": "Explore surprising solar system trivia."
+    },
+    {
+      "url": "https://www.youtube.com/embed/pjaN2WHAHVo",
+      "title": "More Mind-Blowing Space Facts",
+      "description": "Even more cosmic wonders and mysteries."
+    }
+  ],
+  "Animals": [
+    {
+      "url": "https://www.youtube.com/embed/dXOLJOnLKDg",
+      "title": "Neil deGrasse Tyson: 3 Mind-Blowing Space Facts",
+      "description": "Tyson reveals surprising facts about our universe."
+    }
+  ],
+  "Geography": [
+    {
+      "url": "https://www.youtube.com/embed/gmmhpQidSJQ",
+      "title": "Facts About the Earth Even Scientists Find Surprising",
+      "description": "Strange and amazing geography facts."
+    }
+  ],
+  "History": [
+    {
+      "url": "https://www.youtube.com/embed/aiacVxwCoDg",
+      "title": "24 Minutes of Mind-Blowing Facts (History & Science)",
+      "description": "An engaging mix of history and science trivia."
+    }
+  ],
+  "Technology": [
+    {
+      "url": "https://www.youtube.com/embed/WL-GEgNJU_M",
+      "title": "Everyday Technology Science Facts",
+      "description": "Explore the science behind technology in daily life."
+    }
+  ]
+}
