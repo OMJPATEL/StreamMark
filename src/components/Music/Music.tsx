@@ -1,4 +1,5 @@
 import musicData from '../../data/music.json';
+import './music.css';
 
 function Music() {
   return (
@@ -26,7 +27,6 @@ function Music() {
           </div>
         ))}
       </div>
-      <footer>© 2025 StreamMark | Karanveer Singh</footer>
     </section>
   );
 }
