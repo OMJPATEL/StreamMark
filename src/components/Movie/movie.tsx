@@ -1,5 +1,6 @@
 import movies from "../../data/movie.json";
 
+
 type Movie = {
   title: string;
   year: number;
