@@ -70,3 +70,17 @@
 #funfacts {
   scroll-margin-top: 72px;
 }
+
+.team-members,
+.footer-copy {
+  color: #1f2937; 
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .team-members,
+  .footer-copy {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
