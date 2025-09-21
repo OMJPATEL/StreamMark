@@ -6,12 +6,17 @@ import Music from "./components/Music/Music"
 function App() {
   return (
     <div>
-      <Header />
-      <NavBar />
-      <main>
-      <Music />
-      </main>
-      <Footer />
+      <div>
+        <Header />
+        <NavBar />
+        <main>
+        <Music />
+        </main>
+        <Footer />
+      </div>
+
+      <div id="music" style={{ display: 'none' }}>
+      </div>
     </div>
   )
 }
