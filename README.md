@@ -1,69 +1,53 @@
-# React + TypeScript + Vite
+# StreamMark - Mini YouTube
+ 
+## Team
+Team Name: StreamMark  
+ 
+**Members:**
+- Akash Kumar - Movies  
+- Aakash Aakash -  Fun Facts 
+- Om Patel - Educational  
+- Karanveer - Music  
+ 
+ 
+## General Description
+ 
+StreamMark is a React-based project that allows users to explore different types of content lists (movies, educational, fun facts, music).
+Each component is independently developed by a team member and then rendered together to demonstrate list rendering in React.
+ 
+The goal of the project is to practice list rendering, component modularity, and collaborative development in React while providing a simple
+interactive experience.
+ 
+## User Stories
+ 
+1. As a user, I want to view multiple categorized content lists (movies, educational, fun facts, music) so that I can easily explore different
+categories in one place.
+ 
+2. As a user, I want each list to contain several items so that I can quickly scan and learn from the information provided.
+ 
+3. As a user, I want each list to be styled consistently and neatly so that the application looks professional and is easy to navigate.
+ 
+## Getting Started
+ 
+1. Clone the repository:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+   git clone <https://github.com/OMJPATEL/StreamMark>
 
-Currently, two official plugins are available:
+2. Create Project with Vite
+To create a new React + TypeScript project with Vite:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+npm create vite@latest
 
-## Expanding the ESLint configuration
+After that select: 
+1. React
+2. TypeScript
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. Running the development server
+npm run dev
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   
+ 
+ 

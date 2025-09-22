@@ -14,6 +14,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   background: radial-gradient(
@@ -91,6 +96,7 @@ li {
   flex: 0 1 calc(50% - 24px);
 }
 
+/* aspect ratio reference - claude */
 li > a {
   position: relative;
   flex: 1 1 auto;
