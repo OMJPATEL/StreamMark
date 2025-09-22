@@ -6,6 +6,7 @@ import EducationalComponent from "../src/components/Educational/Educational_Comp
 import Movies from "./components/Movie/movie"
 import "./components/Movie/movie.css"
 import FunFacts from "./components/FunFacts/FunFacts"
+import Music from "./components/Music/Music"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <NavBar />
       <main>
+      <Music />
       <EducationalComponent />
       <Movies />
       <FunFacts />
