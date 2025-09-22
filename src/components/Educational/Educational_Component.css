@@ -1,0 +1,65 @@
+.educational-component {
+  display: none;
+}
+
+#education:target {
+  display: block;
+  margin: 24px auto 0;
+  max-width: 900px;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+#education:target > h2 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#education:target ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+#education:target li {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 25%);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+#education:target li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgb(0 0 0 / 30%);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+#education:target li strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+#education { scroll-margin-top: 72px; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  #education:target li { transition: none; }
+}

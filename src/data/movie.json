@@ -1,0 +1,62 @@
+[
+  {
+    "title": "The Avengers",
+    "year": 2012,
+    "poster": "/movies/Avengers.png",
+    "description": "Earth's mightiest heroes join forces to stop Loki and his alien army from enslaving humanity."
+  },
+  {
+    "title": "Fast X",
+    "year": 2023,
+    "poster": "/movies/Fast_furious_X.png",
+    "description": "Dom Toretto and his family face their most dangerous foe yet, driven by vengeance and family ties."
+  },
+  {
+    "title": "Inception",
+    "year": 2010,
+    "poster": "/movies/Inception.png",
+    "description": "A skilled thief who enters dreams to steal secrets must plant an idea in someone’s subconscious."
+  },
+  {
+    "title": "The Martian",
+    "year": 2015,
+    "poster": "/movies/Martian.png",
+    "description": "An astronaut stranded on Mars uses his ingenuity and spirit to survive until rescue is possible."
+  },
+  {
+    "title": "The Matrix",
+    "year": 1999,
+    "poster": "/movies/Matrix.png",
+    "description": "A computer hacker discovers reality is a simulation and joins a rebellion to free humanity."
+  },
+  {
+    "title": "Mufasa: The Lion King",
+    "year": 2024,
+    "poster": "/movies/Mufasa.png",
+    "description": "The untold story of Mufasa’s rise from orphaned cub to the great king of the Pride Lands."
+  },
+  {
+    "title": "The Godfather",
+    "year": 1972,
+    "poster": "/movies/The_Godfather.png",
+    "description": "The aging patriarch of an organized crime dynasty transfers control to his reluctant son."
+  },
+  {
+    "title": "Captain America: The First Avenger",
+    "year": 2011,
+    "poster": "/movies/captain america.png",
+    "description": "Steve Rogers becomes the super-soldier Captain America to fight Hydra during World War II."
+  },
+  {
+    "title": "Jungle Cruise",
+    "year": 2021,
+    "poster": "/movies/jungle_Cruise.png",
+    "description": "A riverboat captain and scientist embark on a perilous journey to find a mystical healing tree."
+  },
+  {
+    "title": "Mission: Impossible",
+    "year": 1996,
+    "poster": "/movies/mission_impossible.png",
+    "description": "Ethan Hunt is framed for betrayal and must uncover the mole in his IMF team to clear his name."
+  }
+]
