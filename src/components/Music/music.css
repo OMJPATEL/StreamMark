@@ -83,6 +83,10 @@
 #music:target .media {
   flex: 0 0 350px;
   height: 220px;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 #music:target .media iframe {
@@ -90,6 +94,8 @@
   height: 100%;
   border: none;
   border-radius: var(--radius) 0 0 var(--radius);
+  background: transparent;
+  display: block;
 }
 
 #music:target .info {
@@ -119,4 +125,17 @@
   margin: 0;
   font-size: 1rem;
   color: var(--muted);
+}
+
+#music {
+  scroll-margin-top: 100px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #music:target .music-card {
+    transition: none;
+  }
+  #music:target > h2 {
+    transition: none;
+  }
 }

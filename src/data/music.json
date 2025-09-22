@@ -19,5 +19,54 @@
     "artist": "Dulla",
     "duration": "2:42",
     "videoId": "xzbWWf7j-GU"
+  },
+  {
+    "id": 4,
+    "title": "Dapper Dan",
+    "artist": "Navaan Sandhu",
+    "duration": "3:20",
+    "videoId": "BJbgZyHTptc"
+  },
+  {
+    "id": 5,
+    "title": "Unbothered",
+    "artist": "Navaan Sandhu",
+    "duration": "4:56",
+    "videoId": "cM69h3upXec"
+  },
+  {
+    "id": 6,
+    "title": "Lahore",
+    "artist": "Harkirat Sangha",
+    "duration": "3:19",
+    "videoId": "MzKLIi_67Ig"
+  },
+  {
+    "id": 7,
+    "title": "I Really Do",
+    "artist": "Karan Aujla",
+    "duration": "3:13",
+    "videoId": "K9R7KcaettM"
+  },
+  {
+    "id": 8,
+    "title": "Wavy",
+    "artist": "Karan Aujla",
+    "duration": "2:40",
+    "videoId": "XTp5jaRU3Ws"
+  },
+  {
+    "id": 9,
+    "title": "For A Reason",
+    "artist": "Karan Aujla",
+    "duration": "3:08",
+    "videoId": "-YlmnPh-6rE"
+  },
+  {
+    "id": 10,
+    "title": "Once I'M Gone",
+    "artist": "Zehr Vibe",
+    "duration": "2:16",
+    "videoId": "cXjVwkrcOws"
   }
 ]

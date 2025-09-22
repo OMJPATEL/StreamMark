@@ -3,8 +3,8 @@ import './music.css';
 
 function Music() {
   return (
-    <section className="music-section">
-      <h1>Music</h1>
+    <div id="music" className="music-component">
+      <h2>Music</h2>
       <div className="music-grid">
         {musicData.map(song => (
           <div key={song.id} className="music-card">
@@ -27,7 +27,7 @@ function Music() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 
