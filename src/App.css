@@ -48,6 +48,39 @@ a {
   }
 }
 
+/* changed header positioning for group project #2 */
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+/* Header styling */
+.site-header {
+  flex: 0 0 auto;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 500ms ease;
+}
+
+.site-header h1:hover {
+  background-position: 100% 50%;
+}
+
 /* text gradient reference - https://search.brave.com/search?q=how+to+add+gradient+in+heading+using+webkit&summary=1&conversation=87501c64385ad4e6633426 */
 
 span,
