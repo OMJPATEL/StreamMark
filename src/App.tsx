@@ -11,13 +11,15 @@ import Music from "./components/Music/Music"
 function App() {
   return (
     <div>
-      <Header />
-      <NavBar />
+      <div className="top-container">
+        <Header />
+        <NavBar />
+      </div>
       <main>
-      <Music />
-      <EducationalComponent />
-      <Movies />
-      <FunFacts />
+        <Music />
+        <EducationalComponent />
+        <Movies />
+        <FunFacts />
       </main>
       <Footer />
     </div>
