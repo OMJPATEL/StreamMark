@@ -1,9 +1,5 @@
+/* Section container */
 .educational-component {
-  display: none;
-}
-
-#education:target {
-  display: block;
   margin: 24px auto 0;
   max-width: 900px;
   padding: 20px;
@@ -13,53 +9,77 @@
   box-shadow: var(--shadow);
 }
 
-#education:target > h2 {
-  margin: 0 0 12px;
-  font-size: clamp(22px, 3.5vw, 30px);
+/* Heading */
+.educational-component > h2 {
+  margin: 0 0 16px;
+  font-size: clamp(20px, 3vw, 28px);
   font-weight: 800;
-  letter-spacing: 0.2px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-#education:target ul {
+/* Grid of videos */
+.educational-component ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-#education:target li {
-  padding: 14px 16px;
-  border-radius: var(--radius);
+/* Card */
+.video-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
   box-shadow: 0 6px 18px rgb(0 0 0 / 25%);
+  padding: 12px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  color: var(--muted);
-  font-size: 0.98rem;
 }
-
-#education:target li:hover {
+.video-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 26px rgb(0 0 0 / 30%);
-  border-color: rgba(255, 255, 255, 0.14);
 }
 
-#education:target li strong {
+/* Iframe (16:9 ratio) */
+.video-frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 10px;
+}
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
   display: block;
-  margin-bottom: 4px;
+}
+
+/* Title + channel */
+.video-info strong {
   color: var(--ink);
   font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+.video-info span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-#education { scroll-margin-top: 72px; }
+/* Smooth scroll margin (kept for sticky headers if you link directly) */
+#education {
+  scroll-margin-top: 72px;
+}
 
-
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  #education:target li { transition: none; }
+  .video-card {
+    transition: none;
+  }
 }

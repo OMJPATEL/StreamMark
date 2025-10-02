@@ -1,107 +1,129 @@
 [
   {
     "id": "1",
-    "title": "What is an Algorithm?",
-    "channel": "Computerphile"
+    "title": "React JS Crash Course",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/w7ejDZ8SWv8"
   },
   {
     "id": "2",
-    "title": "Big O Notation Explained",
-    "channel": "freeCodeCamp.org"
+    "title": "TypeScript Tutorial for Beginners",
+    "channel": "Programming with Mosh",
+    "url": "https://www.youtube.com/embed/d56mG7DezGs"
   },
   {
     "id": "3",
-    "title": "Intro to Git and GitHub",
-    "channel": "Traversy Media"
+    "title": "JavaScript ES6+ Features",
+    "channel": "Academind",
+    "url": "https://www.youtube.com/embed/NCwa_xi0Uuc"
   },
   {
     "id": "4",
-    "title": "Sorting Algorithms Visualized",
-    "channel": "CS50"
+    "title": "CSS Flexbox in 20 Minutes",
+    "channel": "Web Dev Simplified",
+    "url": "https://www.youtube.com/embed/fYq5PXgSsbE"
   },
   {
     "id": "5",
-    "title": "How Does the Internet Work?",
-    "channel": "Techquickie"
+    "title": "Grid Layout Crash Course",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/jV8B24rSN5o"
   },
   {
     "id": "6",
-    "title": "Understanding Hash Tables",
-    "channel": "Computerphile"
+    "title": "Async JavaScript: Promises & Async/Await",
+    "channel": "The Net Ninja",
+    "url": "https://www.youtube.com/embed/_8gHHBlbziw"
   },
   {
     "id": "7",
-    "title": "Learn Python in One Video",
-    "channel": "Programming with Mosh"
+    "title": "Git & GitHub Crash Course",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/SWYqp7iY_Tc"
   },
   {
     "id": "8",
     "title": "REST API Tutorial",
-    "channel": "Academind"
+    "channel": "Academind",
+    "url": "https://www.youtube.com/embed/-MTSQjw5DrM"
   },
   {
     "id": "9",
-    "title": "Data Structures Crash Course",
-    "channel": "freeCodeCamp.org"
+    "title": "Node.js Crash Course",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/fBNz5xF-Kx4"
   },
   {
     "id": "10",
-    "title": "Machine Learning Basics",
-    "channel": "StatQuest with Josh Starmer"
+    "title": "SQL Tutorial for Beginners",
+    "channel": "Programming with Mosh",
+    "url": "https://www.youtube.com/embed/HXV3zeQKqGY"
   },
   {
     "id": "11",
-    "title": "How Computers Calculate",
-    "channel": "Computerphile"
+    "title": "Python for Beginners",
+    "channel": "freeCodeCamp.org",
+    "url": "https://www.youtube.com/embed/rfscVS0vtbw"
   },
   {
     "id": "12",
-    "title": "Intro to JavaScript",
-    "channel": "The Net Ninja"
+    "title": "React Crash Course",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/LDB4uaJ87e0"
   },
   {
     "id": "13",
-    "title": "What is Docker?",
-    "channel": "Fireship"
+    "title": "Web Development Full Course 2025 | Web Development Tutorial",
+    "channel": "Simplilearn",
+    "url": "https://www.youtube.com/embed/1-Wgl_Cj2Ok"
   },
   {
     "id": "14",
-    "title": "SQL Basics Tutorial",
-    "channel": "Programming with Mosh"
+    "title": "Web Development Technologies - A Practical Guide",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/8sXRyHI3bLw"
   },
   {
     "id": "15",
-    "title": "Blockchain Explained",
-    "channel": "Simply Explained"
+    "title": "HTML & CSS Full Course | Web Development for Beginners",
+    "channel": "Smoljames",
+    "url": "https://www.youtube.com/embed/Eb3lOiukwAQ"
   },
   {
     "id": "16",
-    "title": "How Operating Systems Work",
-    "channel": "Computerphile"
+    "title": "React Full Course for free ⚛️ (2024)",
+    "channel": "unknown / free course channel",
+    "url": "https://www.youtube.com/embed/CgkZ7MvWUAA"
   },
   {
     "id": "17",
-    "title": "CSS Flexbox in 20 Minutes",
-    "channel": "Traversy Media"
+    "title": "React JS Crash Course for Beginners (2025)",
+    "channel": "unknown / recent React tutorial",
+    "url": "https://www.youtube.com/embed/sNC53xmk3ek"
   },
   {
     "id": "18",
-    "title": "Introduction to Cloud Computing",
-    "channel": "IBM Technology"
+    "title": "React Crash Course For Beginners 2023 - Build An Instagram Clone",
+    "channel": "Ebenezer Don",
+    "url": "https://www.youtube.com/embed/Zm5lw5Nav1w"
   },
   {
     "id": "19",
-    "title": "Neural Networks Demystified",
-    "channel": "Welch Labs"
+    "title": "React Admin Crash Course 2025",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/PyaSnpXssks"
   },
   {
     "id": "20",
-    "title": "Kubernetes Explained",
-    "channel": "TechWorld with Nana"
+    "title": "Frontend Web Development: In-Depth Project Tutorial (HTML, CSS, JS, TS, React)",
+    "channel": "freeCodeCamp.org",
+    "url": "https://www.youtube.com/embed/MsnQ5uepIaE"
   },
   {
     "id": "21",
-    "title": "The History of Programming Languages",
-    "channel": "Computerphile"
+    "title": "Full Stack Web Development for Beginners (Full Course on HTML, CSS, JavaScript, Node.js, MongoDB)",
+    "channel": "freeCodeCamp.org",
+    "url": "https://www.youtube.com/embed/nu_pCVPKzTk"
   }
 ]
+
