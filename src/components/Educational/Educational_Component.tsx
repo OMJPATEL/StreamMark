@@ -11,7 +11,7 @@ type Video = {
 function EducationalComponent() {
 
   return (
-    <section id="education" className="educational-component">
+    <section id="educational" className="educational-component">
       <h2>Educational Videos</h2>
 
       {Array.isArray(videos) && videos.length > 0 ? (
