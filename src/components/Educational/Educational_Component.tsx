@@ -1,21 +1,22 @@
 import videos from "../../data/educational-videos.json";
-import "../Educational/Educational_Component.css";
+import "./Educational_Component.css";
 
 type Video = {
   id: string;
   title: string;
   channel: string;
-  url: string;
+  url: string; 
 };
 
 function EducationalComponent() {
+  const hasVideos = Array.isArray(videos) && videos.length > 0;
 
   return (
     <section id="educational" className="educational-component">
       <h2>Educational Videos</h2>
 
-      {Array.isArray(videos) && videos.length > 0 ? (
-        <ul>
+      {hasVideos ? (
+        <ul className="video-grid" aria-label="Educational videos">
           {videos.map((video: Video) => (
             <li key={video.id} className="video-card">
               <div className="video-frame">
@@ -28,8 +29,8 @@ function EducationalComponent() {
                 />
               </div>
               <div className="video-info">
-                <strong>{video.title}</strong>
-                <span>{video.channel}</span>
+                <strong className="video-title">{video.title}</strong>
+                <span className="video-channel">{video.channel}</span>
               </div>
             </li>
           ))}
