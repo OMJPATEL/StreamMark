@@ -1,5 +1,6 @@
 import videos from "../../data/educational-videos.json";
 import "./Educational_Component.css";
+import {useState} from "react";
 
 type Video = {
   id: string;
@@ -7,6 +8,18 @@ type Video = {
   channel: string;
   url: string; 
 };
+
+function EducationalComponent() {
+  const hasVideos = Array.isArray(videos) && videos.length > 0;
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredVideos = hasVideos
+    ? videos.filter(
+        (video: Video) =>
+          video.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          video.channel.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
 function EducationalComponent() {
   const hasVideos = Array.isArray(videos) && videos.length > 0;
