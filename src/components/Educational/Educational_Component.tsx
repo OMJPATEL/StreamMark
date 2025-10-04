@@ -1,12 +1,12 @@
 import videos from "../../data/educational-videos.json";
 import "./Educational_Component.css";
-import {useState} from "react";
+import { useState } from "react";
 
 type Video = {
   id: string;
   title: string;
   channel: string;
-  url: string; 
+  url: string;
 };
 
 function EducationalComponent() {
@@ -21,16 +21,25 @@ function EducationalComponent() {
       )
     : [];
 
-function EducationalComponent() {
-  const hasVideos = Array.isArray(videos) && videos.length > 0;
-
   return (
     <section id="educational" className="educational-component">
       <h2>Educational Videos</h2>
 
-      {hasVideos ? (
+      <div className="search-row">
+        <input
+          type="text"
+          placeholder="Search by title or channel..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        {searchTerm && (
+          <button onClick={() => setSearchTerm("")}>Clear</button>
+        )}
+      </div>
+
+      {filteredVideos.length > 0 ? (
         <ul className="video-grid" aria-label="Educational videos">
-          {videos.map((video: Video) => (
+          {filteredVideos.map((video: Video) => (
             <li key={video.id} className="video-card">
               <div className="video-frame">
                 <iframe
@@ -49,7 +58,11 @@ function EducationalComponent() {
           ))}
         </ul>
       ) : (
-        <p className="muted">No educational videos yet.</p>
+        <p className="muted">
+          {searchTerm
+            ? 'No videos found for "${searchTerm}".'
+            : "No educational videos yet."}
+        </p>
       )}
     </section>
   );
