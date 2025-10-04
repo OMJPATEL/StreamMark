@@ -49,81 +49,134 @@
   },
   {
     "id": "9",
-    "title": "Node.js Crash Course",
-    "channel": "Traversy Media",
-    "url": "https://www.youtube.com/embed/fBNz5xF-Kx4"
-  },
-  {
-    "id": "10",
     "title": "SQL Tutorial for Beginners",
     "channel": "Programming with Mosh",
     "url": "https://www.youtube.com/embed/HXV3zeQKqGY"
   },
   {
-    "id": "11",
+    "id": "10",
     "title": "Python for Beginners",
     "channel": "freeCodeCamp.org",
     "url": "https://www.youtube.com/embed/rfscVS0vtbw"
   },
   {
+    "id": "11",
+    "title": "The Most Radioactive Places on Earth",
+    "channel": "Veritasium",
+    "url": "https://www.youtube.com/embed/TRL7o2kPqw0"
+  },
+  {
     "id": "12",
-    "title": "React Crash Course",
-    "channel": "Traversy Media",
-    "url": "https://www.youtube.com/embed/LDB4uaJ87e0"
+    "title": "What Is a Black Hole?",
+    "channel": "PBS Space Time",
+    "url": "https://www.youtube.com/embed/e-P5IFTqB98"
   },
   {
     "id": "13",
-    "title": "Web Development Full Course 2025 | Web Development Tutorial",
-    "channel": "Simplilearn",
-    "url": "https://www.youtube.com/embed/1-Wgl_Cj2Ok"
+    "title": "The Agricultural Revolution",
+    "channel": "CrashCourse World History",
+    "url": "https://www.youtube.com/embed/Yocja_N5s1I"
   },
   {
     "id": "14",
-    "title": "Web Development Technologies - A Practical Guide",
-    "channel": "Traversy Media",
-    "url": "https://www.youtube.com/embed/8sXRyHI3bLw"
+    "title": "How Wolves Change Rivers",
+    "channel": "Sustainable Human",
+    "url": "https://www.youtube.com/embed/ysa5OBhXz-Q"
   },
   {
     "id": "15",
-    "title": "HTML & CSS Full Course | Web Development for Beginners",
-    "channel": "Smoljames",
-    "url": "https://www.youtube.com/embed/Eb3lOiukwAQ"
+    "title": "Compound Interest Explained",
+    "channel": "Practical Psychology",
+    "url": "https://www.youtube.com/embed/wf91rEGw88Q"
   },
   {
     "id": "16",
-    "title": "React Full Course for free ⚛️ (2024)",
-    "channel": "unknown / free course channel",
-    "url": "https://www.youtube.com/embed/CgkZ7MvWUAA"
+    "title": "Why Do We Sleep?",
+    "channel": "TED-Ed",
+    "url": "https://www.youtube.com/embed/pwaWilO_Pig"
   },
   {
     "id": "17",
-    "title": "React JS Crash Course for Beginners (2025)",
-    "channel": "unknown / recent React tutorial",
-    "url": "https://www.youtube.com/embed/sNC53xmk3ek"
+    "title": "Music Theory in 16 Minutes",
+    "channel": "Andrew Huang",
+    "url": "https://www.youtube.com/embed/rgaTLrZGlk0"
   },
   {
     "id": "18",
-    "title": "React Crash Course For Beginners 2023 - Build An Instagram Clone",
-    "channel": "Ebenezer Don",
-    "url": "https://www.youtube.com/embed/Zm5lw5Nav1w"
+    "title": "The Map That Changed the World",
+    "channel": "BBC Ideas",
+    "url": "https://www.youtube.com/embed/7D1Q6Z9erh0"
   },
   {
     "id": "19",
-    "title": "React Admin Crash Course 2025",
-    "channel": "Traversy Media",
-    "url": "https://www.youtube.com/embed/PyaSnpXssks"
+    "title": "Beginner's Guide to Drawing",
+    "channel": "Proko",
+    "url": "https://www.youtube.com/embed/7TXEZ4tP06c"
   },
   {
     "id": "20",
-    "title": "Frontend Web Development: In-Depth Project Tutorial (HTML, CSS, JS, TS, React)",
-    "channel": "freeCodeCamp.org",
-    "url": "https://www.youtube.com/embed/MsnQ5uepIaE"
+    "title": "Basic Knife Skills (Cooking)",
+    "channel": "America's Test Kitchen",
+    "url": "https://www.youtube.com/embed/3LhYdZ9Hq8E"
   },
   {
     "id": "21",
-    "title": "Full Stack Web Development for Beginners (Full Course on HTML, CSS, JavaScript, Node.js, MongoDB)",
-    "channel": "freeCodeCamp.org",
-    "url": "https://www.youtube.com/embed/nu_pCVPKzTk"
+    "title": "Introduction to Calculus (Limits)",
+    "channel": "Khan Academy",
+    "url": "https://www.youtube.com/embed/DH1K6h9Vh1k"
+  },
+  {
+    "id": "22",
+    "title": "DNA, Genes, and Chromosomes",
+    "channel": "Amoeba Sisters",
+    "url": "https://www.youtube.com/embed/8m6hHRlKwxY"
+  },
+  {
+    "id": "23",
+    "title": "Learn Spanish in 20 Minutes",
+    "channel": "SpanishDict",
+    "url": "https://www.youtube.com/embed/8lXdyD2Yzls"
+  },
+  {
+    "id": "24",
+    "title": "How Vaccines Work",
+    "channel": "Kurzgesagt - In a Nutshell",
+    "url": "https://www.youtube.com/embed/lyvwWR3dyi0"
+  },
+  {
+    "id": "25",
+    "title": "Supply and Demand Explained",
+    "channel": "Marginal Revolution University",
+    "url": "https://www.youtube.com/embed/g9aDizJpd_s"
+  },
+  {
+    "id": "26",
+    "title": "The Science of Climate Change",
+    "channel": "National Geographic",
+    "url": "https://www.youtube.com/embed/G4H1N_yXBiA"
+  },
+  {
+    "id": "27",
+    "title": "Study With Me (Pomodoro 25/5)",
+    "channel": "Merve",
+    "url": "https://www.youtube.com/embed/PGS3z7P2q90"
+  },
+  {
+    "id": "28",
+    "title": "What Is Philosophy?",
+    "channel": "The School of Life",
+    "url": "https://www.youtube.com/embed/mIYdx6lDDhg"
+  },
+  {
+    "id": "29",
+    "title": "History of the Universe in 13,799 Minutes",
+    "channel": "Kurzgesagt - In a Nutshell",
+    "url": "https://www.youtube.com/embed/whQGgqEYAl0"
+  },
+  {
+    "id": "30",
+    "title": "Basics of Photography: Exposure and Composition",
+    "channel": "Nikon Learn & Explore",
+    "url": "https://www.youtube.com/embed/7Eo0WQp43tM"
   }
 ]
-
