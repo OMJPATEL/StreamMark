@@ -1,3 +1,5 @@
+import FunLikeButton from "./FunLikeButton";
+
 type Video = {
   url: string;
   title: string;
@@ -20,6 +22,13 @@ function VideoCard({ video }: VideoCardProps) {
       ></iframe>
       <h3>{video.title}</h3>
       <p>{video.description}</p>
+      <FunLikeButton
+        video={{
+          id: video.url,      
+          title: video.title,
+          url: video.url,
+        }}
+      />
     </div>
   );
 }
