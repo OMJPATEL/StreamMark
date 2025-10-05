@@ -4,7 +4,7 @@ body {
   height: 100%;
   overflow-y: auto;
 }
-.movies-section { /* visible by default; router controls mounting */
+.movies-section { 
   display: none;
 }
 

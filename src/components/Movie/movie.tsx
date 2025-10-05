@@ -1,5 +1,6 @@
 import movies from "../../data/movie.json";
-
+import { useState } from "react";
+import "./movie.css";
 
 type Movie = {
   title: string;
@@ -9,8 +10,22 @@ type Movie = {
 };
 
 export default function Movies() {
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <section id="movies" className="movies-section">
+
+      <div className="search-row">
+        <input
+          type="text"
+          placeholder="Search movies..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        {searchTerm && (
+          <button onClick={() => setSearchTerm("")}>Clear</button>
+        )}
+      </div>
+
       <h2>Movies List</h2>
       {movies.map((m: Movie, i: number) => (
         <div key={i}>
