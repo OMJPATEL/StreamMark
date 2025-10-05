@@ -19,7 +19,7 @@ export default function LikeButton({ video, ariaLabel }: Props) {
       onClick={onClick}
       type="button"
     >
-      <span className="heart" aria-hidden>♥</span>
+      <span className="heart" aria-hidden> </span>
       {liked ? "Liked" : "Like"}
     </button>
   );
