@@ -9,6 +9,7 @@ function NavBar() {
         <li><NavLink to="/funfacts">Fun-Facts</NavLink></li>
         <li><NavLink to="/movies">Movies</NavLink></li>
         <li><NavLink to="/music">Music</NavLink></li>
+              <li><NavLink to="/liked">Liked</NavLink></li>
       </ul>
     </nav>
   )

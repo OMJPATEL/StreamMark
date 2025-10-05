@@ -1,4 +1,3 @@
-/* Section container */
 .educational-component {
   margin: 24px auto 0;
   max-width: 900px;
@@ -9,7 +8,6 @@
   box-shadow: var(--shadow);
 }
 
-/* Heading */
 .educational-component > h2 {
   margin: 0 0 16px;
   font-size: clamp(20px, 3vw, 28px);
@@ -20,7 +18,6 @@
   color: transparent;
 }
 
-/* Grid of videos */
 .educational-component ul {
   list-style: none;
   margin: 0;
@@ -30,7 +27,6 @@
   gap: 20px;
 }
 
-/* Card */
 .video-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -44,7 +40,6 @@
   box-shadow: 0 10px 26px rgb(0 0 0 / 30%);
 }
 
-/* Iframe (16:9 ratio) */
 .video-frame {
   aspect-ratio: 16 / 9;
   width: 100%;
@@ -60,7 +55,6 @@
   display: block;
 }
 
-/* Title + channel */
 .video-info strong {
   color: var(--ink);
   font-weight: 700;
@@ -72,14 +66,91 @@
   font-size: 0.9rem;
 }
 
-/* Smooth scroll margin (kept for sticky headers if you link directly) */
 #education {
   scroll-margin-top: 72px;
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .video-card {
     transition: none;
   }
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ink);
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.search-row input::placeholder {
+  color: var(--muted);
+}
+
+.search-row input:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-row button {
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.search-row button:hover {
+  opacity: 0.85;
+}
+
+
+
+.like-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.like-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.like-btn:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-1px);
+}
+
+.like-count {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.heart {
+  font-size: 1rem;
+  line-height: 1;
 }
