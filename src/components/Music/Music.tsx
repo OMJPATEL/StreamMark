@@ -1,4 +1,5 @@
 import musicData from '../../data/music.json';
+import LikeButton from '../common/LikeButton';
 import './music.css';
 
 function Music() {
@@ -23,6 +24,17 @@ function Music() {
                 <p className="artist">{song.artist}</p>
               </div>
               <p className="duration">Duration: {song.duration}</p>
+              
+              <LikeButton
+                video={{
+                  id: String(song.id),
+                  title: song.title,
+                  channel: song.artist,
+                  url: `https://www.youtube.com/watch?v=${song.videoId}`,
+                  category: "Music",
+                }}
+                ariaLabel={`Like ${song.title}`}
+              />
             </div>
           </div>
         ))}
