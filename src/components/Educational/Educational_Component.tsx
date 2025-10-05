@@ -1,6 +1,7 @@
 import videos from "../../data/educational-videos.json";
 import "./Educational_Component.css";
 import { useState } from "react";
+import LikeButton from "../common/LikeButton";
 
 type Video = {
   id: string;
@@ -50,9 +51,24 @@ function EducationalComponent() {
                   allowFullScreen
                 />
               </div>
+
               <div className="video-info">
                 <strong className="video-title">{video.title}</strong>
                 <span className="video-channel">{video.channel}</span>
+              </div>
+
+              
+              <div className="actions">
+                <LikeButton
+                  video={{
+                    id: video.id,
+                    title: video.title,
+                    channel: video.channel,
+                    url: video.url,
+                    category: "Education",
+                  }}
+                  ariaLabel={`Like ${video.title}`}
+                />
               </div>
             </li>
           ))}
