@@ -1,13 +1,35 @@
+import { useState } from 'react';
 import musicData from '../../data/music.json';
 import LikeButton from '../common/LikeButton';
 import './music.css';
 
 function Music() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredSongs = musicData.filter(
+    (song) =>
+      song.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      song.artist.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div id="music" className="music-component">
       <h2>Music</h2>
+      
+      <div className="search-row">
+        <input
+          type="text"
+          placeholder="Search by title or artist..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        {searchTerm && (
+          <button onClick={() => setSearchTerm("")}>Clear</button>
+        )}
+      </div>
+
       <div className="music-grid">
-        {musicData.map(song => (
+        {filteredSongs.map(song => (
           <div key={song.id} className="music-card">
             <div className="media">
               <iframe
@@ -39,6 +61,10 @@ function Music() {
           </div>
         ))}
       </div>
+
+      {filteredSongs.length === 0 && (
+        <p className="no-results">No songs found for "{searchTerm}"</p>
+      )}
     </div>
   );
 }
