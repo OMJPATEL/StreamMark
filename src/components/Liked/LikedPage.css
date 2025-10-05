@@ -1,0 +1,73 @@
+.liked-page {
+  padding: 24px;
+}
+
+.liked-title {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.liked-section {
+  background: #1e222b;
+  padding: 18px;
+  border-radius: 14px;
+  margin: 24px 0;
+}
+
+.liked-heading {
+  margin: 0 0 12px;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+.liked-empty {
+  height: 72px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+}
+
+.liked-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.liked-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+.liked-item .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.liked-item .title {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.liked-item .channel {
+  opacity: 0.8;
+  font-size: 13px;
+}
+
+.remove-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
