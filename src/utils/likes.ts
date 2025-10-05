@@ -4,6 +4,7 @@ export type LikedVideo = {
   title: string;
   channel?: string;
   url?: string;
+  thumbnail?: string;
   category: "Education" | "Music" | "Fun Fact" | "Movies" | string;
 };
 
