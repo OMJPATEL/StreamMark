@@ -22,7 +22,7 @@ export default function EduLikeButton({ video }: Props) {
   }, [video.id]);
 
   const onClick = () => {
-    setLiked(toggle({ ...video, category: "Educational" }));
+    setLiked(toggle({ ...video, category: "Education" }));
   };
 
   return (
