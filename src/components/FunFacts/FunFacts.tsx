@@ -26,7 +26,17 @@ function FunFacts() {
         <article key={category}>
           <h2>{category}</h2>
           <div className="grid">
-            {videos.map((video, index) => (
+            {videos
+              .filter((video) => {
+                const q = searchTerm.trim().toLowerCase();
+                if (!q) return true;
+                return (
+                  category.toLowerCase().includes(q) ||
+                  video.title.toLowerCase().includes(q) ||
+                  video.description.toLowerCase().includes(q)
+                );
+              })
+              .map((video, index) => (
               <VideoCard key={category + index} video={video} />
             ))}
           </div>
