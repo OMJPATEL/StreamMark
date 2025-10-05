@@ -6,9 +6,12 @@ type Props = {
   video: {
     id: string;
     title: string;
+    channel: string;
     url?: string;
     thumbnail?: string;
+    category?: string;
   };
+  ariaLabel?: string;
 };
 
 export default function EduLikeButton({ video }: Props) {
