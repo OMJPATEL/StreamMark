@@ -1,8 +1,5 @@
-.funfacts {
-  display: none;
-}
-
-#funfacts:target {
+.funfacts { /* hidden by default to prevent FOUC */ display: none; }
+.route-funfacts #funfacts {
   display: block;
   margin: 24px auto 0;
   max-width: 900px;
@@ -13,7 +10,7 @@
   box-shadow: var(--shadow);
 }
 
-#funfacts:target > h1 {
+.route-funfacts #funfacts > h1 {
   margin: 0 0 12px;
   font-size: clamp(22px, 3.5vw, 30px);
   font-weight: 800;
@@ -24,7 +21,7 @@
   color: transparent;
 }
 
-#funfacts:target .grid {
+.route-funfacts #funfacts .grid {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -33,7 +30,7 @@
   gap: 16px;
 }
 
-#funfacts:target .card {
+.route-funfacts #funfacts .card {
   padding: 14px 16px;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.04);
@@ -44,20 +41,20 @@
   font-size: 0.98rem;
 }
 
-#funfacts:target .card:hover {
+.route-funfacts #funfacts .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 26px rgb(0 0 0 / 30%);
   border-color: rgba(255, 255, 255, 0.14);
 }
 
-#funfacts:target .card h3 {
+.route-funfacts #funfacts .card h3 {
   display: block;
   margin-bottom: 4px;
   color: var(--ink);
   font-weight: 700;
 }
 
-#funfacts:target .card iframe {
+.route-funfacts #funfacts .card iframe {
   width: 100%;
   max-width: 100%;
   aspect-ratio: 16 / 9; 
