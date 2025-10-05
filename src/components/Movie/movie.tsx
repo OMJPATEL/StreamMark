@@ -1,6 +1,7 @@
 import movies from "../../data/movie.json";
 import { useState } from "react";
 import "./movie.css";
+import MovieLikeButton from "./MovieLikeButton";
 
 type Movie = {
   title: string;
@@ -45,6 +46,14 @@ export default function Movies() {
               {m.title} ({m.year})
             </h3>
             <p>{m.description}</p>
+            <MovieLikeButton
+              movie={{
+                id: String(i),
+                title: m.title,
+                year: m.year,
+                poster: m.poster,
+              }}
+            />
           </div>
         ))
       ) : (

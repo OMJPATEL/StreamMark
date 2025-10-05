@@ -6,9 +6,12 @@ type Props = {
   video: {
     id: string;
     title: string;
+    channel: string;
     url?: string;
     thumbnail?: string;
+    category?: string;
   };
+  ariaLabel?: string;
 };
 
 export default function EduLikeButton({ video }: Props) {
@@ -19,7 +22,7 @@ export default function EduLikeButton({ video }: Props) {
   }, [video.id]);
 
   const onClick = () => {
-    setLiked(toggle({ ...video, category: "Educational" }));
+    setLiked(toggle({ ...video, category: "Education" }));
   };
 
   return (
