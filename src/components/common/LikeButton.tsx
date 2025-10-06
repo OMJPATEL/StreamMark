@@ -1,8 +1,7 @@
-
 import { useEffect, useState } from "react";
 import { isLiked, toggle } from "../../utils/likes";
 import type { LikedVideo } from "../../utils/likes";
-
+import { Heart } from "lucide-react";
 import "./LikeButton.css";
 
 type Props = { video: LikedVideo; ariaLabel?: string };
@@ -11,6 +10,7 @@ export default function LikeButton({ video, ariaLabel }: Props) {
   const [liked, setLiked] = useState(false);
   useEffect(() => { setLiked(isLiked(video.id)); }, [video.id]);
   const onClick = () => setLiked(toggle(video));
+  
   return (
     <button
       className={`like-btn ${liked ? "liked" : ""}`}
@@ -19,8 +19,12 @@ export default function LikeButton({ video, ariaLabel }: Props) {
       onClick={onClick}
       type="button"
     >
-      <span className="heart" aria-hidden> </span>
-      {liked ? "Liked" : "Like"}
+      <Heart 
+        size={18}
+        fill={liked ? "currentColor" : "none"}
+        strokeWidth={2}
+      />
+      {liked ? "" : ""}
     </button>
   );
 }
