@@ -6,7 +6,7 @@ export type MovieLiked = {
   category: "Movies";
 };
 
-const KEY = "liked_movies_v1";
+const KEY = "liked_videos_v1";
 
 function readStore(): Record<string, MovieLiked> {
   try {
@@ -20,6 +20,7 @@ function readStore(): Record<string, MovieLiked> {
 function writeStore(store: Record<string, MovieLiked>) {
   try {
     localStorage.setItem(KEY, JSON.stringify(store));
+    window.dispatchEvent(new StorageEvent("storage", { key: KEY }));
   } catch {}
 }
 
@@ -36,5 +37,5 @@ export function toggle(movie: MovieLiked) {
     store[movie.id] = movie;
   }
   writeStore(store);
-  return !store[movie.id];
+  return !!store[movie.id];
 }

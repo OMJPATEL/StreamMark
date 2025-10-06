@@ -125,3 +125,16 @@ body {
 .search-row button:hover {
   opacity: 0.85;
 }
+
+.like-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.like-btn.liked {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 700;
+  border-color: transparent;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
