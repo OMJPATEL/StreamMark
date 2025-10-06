@@ -1,7 +1,7 @@
 import videos from "../../data/educational-videos.json";
 import "./Educational_Component.css";
 import { useState } from "react";
-import LikeButton from "../common/LikeButton";
+import EduLikeButton from "../Educational/EduLikeButton";
 
 type Video = {
   id: string;
@@ -59,7 +59,7 @@ function EducationalComponent() {
 
               
               <div className="actions">
-                <LikeButton
+                <EduLikeButton
                   video={{
                     id: video.id,
                     title: video.title,
@@ -67,7 +67,7 @@ function EducationalComponent() {
                     url: video.url,
                     category: "Education",
                   }}
-                  ariaLabel={`Like ${video.title}`}
+                  ariaLabel={'Like ${video.title}'}
                 />
               </div>
             </li>
