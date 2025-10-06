@@ -1,107 +1,182 @@
 [
   {
     "id": "1",
-    "title": "What is an Algorithm?",
-    "channel": "Computerphile"
+    "title": "React JS Crash Course",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/w7ejDZ8SWv8"
   },
   {
     "id": "2",
-    "title": "Big O Notation Explained",
-    "channel": "freeCodeCamp.org"
+    "title": "TypeScript Tutorial for Beginners",
+    "channel": "Programming with Mosh",
+    "url": "https://www.youtube.com/embed/d56mG7DezGs"
   },
   {
     "id": "3",
-    "title": "Intro to Git and GitHub",
-    "channel": "Traversy Media"
+    "title": "JavaScript ES6+ Features",
+    "channel": "Academind",
+    "url": "https://www.youtube.com/embed/NCwa_xi0Uuc"
   },
   {
     "id": "4",
-    "title": "Sorting Algorithms Visualized",
-    "channel": "CS50"
+    "title": "CSS Flexbox in 20 Minutes",
+    "channel": "Web Dev Simplified",
+    "url": "https://www.youtube.com/embed/fYq5PXgSsbE"
   },
   {
     "id": "5",
-    "title": "How Does the Internet Work?",
-    "channel": "Techquickie"
+    "title": "Grid Layout Crash Course",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/jV8B24rSN5o"
   },
   {
     "id": "6",
-    "title": "Understanding Hash Tables",
-    "channel": "Computerphile"
+    "title": "Async JavaScript: Promises & Async/Await",
+    "channel": "The Net Ninja",
+    "url": "https://www.youtube.com/embed/_8gHHBlbziw"
   },
   {
     "id": "7",
-    "title": "Learn Python in One Video",
-    "channel": "Programming with Mosh"
+    "title": "Git & GitHub Crash Course",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/embed/SWYqp7iY_Tc"
   },
   {
     "id": "8",
     "title": "REST API Tutorial",
-    "channel": "Academind"
+    "channel": "Academind",
+    "url": "https://www.youtube.com/embed/-MTSQjw5DrM"
   },
   {
     "id": "9",
-    "title": "Data Structures Crash Course",
-    "channel": "freeCodeCamp.org"
+    "title": "SQL Tutorial for Beginners",
+    "channel": "Programming with Mosh",
+    "url": "https://www.youtube.com/embed/HXV3zeQKqGY"
   },
   {
     "id": "10",
-    "title": "Machine Learning Basics",
-    "channel": "StatQuest with Josh Starmer"
+    "title": "Python for Beginners",
+    "channel": "freeCodeCamp.org",
+    "url": "https://www.youtube.com/embed/rfscVS0vtbw"
   },
   {
     "id": "11",
-    "title": "How Computers Calculate",
-    "channel": "Computerphile"
+    "title": "The Most Radioactive Places on Earth",
+    "channel": "Veritasium",
+    "url": "https://www.youtube.com/embed/TRL7o2kPqw0"
   },
   {
     "id": "12",
-    "title": "Intro to JavaScript",
-    "channel": "The Net Ninja"
+    "title": "What Is a Black Hole?",
+    "channel": "PBS Space Time",
+    "url": "https://www.youtube.com/embed/e-P5IFTqB98"
   },
   {
     "id": "13",
-    "title": "What is Docker?",
-    "channel": "Fireship"
+    "title": "The Agricultural Revolution",
+    "channel": "CrashCourse World History",
+    "url": "https://www.youtube.com/embed/Yocja_N5s1I"
   },
   {
     "id": "14",
-    "title": "SQL Basics Tutorial",
-    "channel": "Programming with Mosh"
+    "title": "How Wolves Change Rivers",
+    "channel": "Sustainable Human",
+    "url": "https://www.youtube.com/embed/ysa5OBhXz-Q"
   },
   {
     "id": "15",
-    "title": "Blockchain Explained",
-    "channel": "Simply Explained"
+    "title": "Compound Interest Explained",
+    "channel": "Practical Psychology",
+    "url": "https://www.youtube.com/embed/wf91rEGw88Q"
   },
   {
     "id": "16",
-    "title": "How Operating Systems Work",
-    "channel": "Computerphile"
+    "title": "Why Do We Sleep?",
+    "channel": "TED-Ed",
+    "url": "https://www.youtube.com/embed/pwaWilO_Pig"
   },
   {
     "id": "17",
-    "title": "CSS Flexbox in 20 Minutes",
-    "channel": "Traversy Media"
+    "title": "Music Theory in 16 Minutes",
+    "channel": "Andrew Huang",
+    "url": "https://www.youtube.com/embed/rgaTLrZGlk0"
   },
   {
     "id": "18",
-    "title": "Introduction to Cloud Computing",
-    "channel": "IBM Technology"
+    "title": "The Map That Changed the World",
+    "channel": "BBC Ideas",
+    "url": "https://www.youtube.com/embed/7D1Q6Z9erh0"
   },
   {
     "id": "19",
-    "title": "Neural Networks Demystified",
-    "channel": "Welch Labs"
+    "title": "Beginner's Guide to Drawing",
+    "channel": "Proko",
+    "url": "https://www.youtube.com/embed/7TXEZ4tP06c"
   },
   {
     "id": "20",
-    "title": "Kubernetes Explained",
-    "channel": "TechWorld with Nana"
+    "title": "Basic Knife Skills (Cooking)",
+    "channel": "America's Test Kitchen",
+    "url": "https://www.youtube.com/embed/3LhYdZ9Hq8E"
   },
   {
     "id": "21",
-    "title": "The History of Programming Languages",
-    "channel": "Computerphile"
+    "title": "Introduction to Calculus (Limits)",
+    "channel": "Khan Academy",
+    "url": "https://www.youtube.com/embed/DH1K6h9Vh1k"
+  },
+  {
+    "id": "22",
+    "title": "DNA, Genes, and Chromosomes",
+    "channel": "Amoeba Sisters",
+    "url": "https://www.youtube.com/embed/8m6hHRlKwxY"
+  },
+  {
+    "id": "23",
+    "title": "Learn Spanish in 20 Minutes",
+    "channel": "SpanishDict",
+    "url": "https://www.youtube.com/embed/8lXdyD2Yzls"
+  },
+  {
+    "id": "24",
+    "title": "How Vaccines Work",
+    "channel": "Kurzgesagt - In a Nutshell",
+    "url": "https://www.youtube.com/embed/lyvwWR3dyi0"
+  },
+  {
+    "id": "25",
+    "title": "Supply and Demand Explained",
+    "channel": "Marginal Revolution University",
+    "url": "https://www.youtube.com/embed/g9aDizJpd_s"
+  },
+  {
+    "id": "26",
+    "title": "The Science of Climate Change",
+    "channel": "National Geographic",
+    "url": "https://www.youtube.com/embed/G4H1N_yXBiA"
+  },
+  {
+    "id": "27",
+    "title": "Study With Me (Pomodoro 25/5)",
+    "channel": "Merve",
+    "url": "https://www.youtube.com/embed/PGS3z7P2q90"
+  },
+  {
+    "id": "28",
+    "title": "What Is Philosophy?",
+    "channel": "The School of Life",
+    "url": "https://www.youtube.com/embed/mIYdx6lDDhg"
+  },
+  {
+    "id": "29",
+    "title": "History of the Universe in 13,799 Minutes",
+    "channel": "Kurzgesagt - In a Nutshell",
+    "url": "https://www.youtube.com/embed/whQGgqEYAl0"
+  },
+  {
+    "id": "30",
+    "title": "Basics of Photography: Exposure and Composition",
+    "channel": "Nikon Learn & Explore",
+    "url": "https://www.youtube.com/embed/7Eo0WQp43tM"
   }
 ]

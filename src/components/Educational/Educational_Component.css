@@ -1,9 +1,4 @@
 .educational-component {
-  display: none;
-}
-
-#education:target {
-  display: block;
   margin: 24px auto 0;
   max-width: 900px;
   padding: 20px;
@@ -13,53 +8,149 @@
   box-shadow: var(--shadow);
 }
 
-#education:target > h2 {
-  margin: 0 0 12px;
-  font-size: clamp(22px, 3.5vw, 30px);
+.educational-component > h2 {
+  margin: 0 0 16px;
+  font-size: clamp(20px, 3vw, 28px);
   font-weight: 800;
-  letter-spacing: 0.2px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-#education:target ul {
+.educational-component ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-#education:target li {
-  padding: 14px 16px;
-  border-radius: var(--radius);
+.video-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
   box-shadow: 0 6px 18px rgb(0 0 0 / 25%);
+  padding: 12px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  color: var(--muted);
-  font-size: 0.98rem;
 }
-
-#education:target li:hover {
+.video-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 26px rgb(0 0 0 / 30%);
-  border-color: rgba(255, 255, 255, 0.14);
 }
 
-#education:target li strong {
+.video-frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 10px;
+}
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
   display: block;
-  margin-bottom: 4px;
+}
+
+.video-info strong {
   color: var(--ink);
   font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+.video-info span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-#education { scroll-margin-top: 72px; }
-
+#education {
+  scroll-margin-top: 72px;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  #education:target li { transition: none; }
+  .video-card {
+    transition: none;
+  }
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ink);
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.search-row input::placeholder {
+  color: var(--muted);
+}
+
+.search-row input:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-row button {
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.search-row button:hover {
+  opacity: 0.85;
+}
+
+
+
+.like-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.like-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.like-btn:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-1px);
+}
+
+.like-count {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.heart {
+  font-size: 1rem;
+  line-height: 1;
 }

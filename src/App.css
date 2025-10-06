@@ -48,6 +48,41 @@ a {
   }
 }
 
+/* changed header positioning for group project #2 */
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+/* New Header styling */
+.site-header {
+  flex: 0 0 auto;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 500ms ease;
+}
+
+.site-header h1:hover {
+  background-position: 100% 50%;
+}
+
+/* New Nav styling */
+
 /* text gradient reference - https://search.brave.com/search?q=how+to+add+gradient+in+heading+using+webkit&summary=1&conversation=87501c64385ad4e6633426 */
 
 span,
@@ -69,6 +104,77 @@ h1 {
 span:hover,
 h1:hover {
   background-position: 100% 50%;
+}
+
+/* Navigation styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links li {
+  display: flex;
+  flex: none;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  width: 110px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    300px 150px at 50% 50%,
+    rgb(124 156 255 / 15%),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.25s ease;
+  border-radius: var(--radius);
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.nav-links a:hover::after {
+  opacity: 1;
+}
+
+main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
 }
 
 span + p {
@@ -100,7 +206,6 @@ li {
 li > a {
   position: relative;
   flex: 1 1 auto;
-  min-height: 220px;
   aspect-ratio: 16 / 9;
   font-size: 1.5rem;
   display: flex;
@@ -155,3 +260,36 @@ footer,
   align-self: center;
   margin-top: auto;
 }
+
+
+.route-home .navbar .brand { display: none; }
+
+
+.navbar .nav-links { margin-left: auto; }
+
+
+.route-home main {
+  display: flex;
+  justify-content: center;
+}
+
+
+.top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+
+header.site-header {
+  text-align: left;
+  margin: 24px 0 0 28px;
+}
+
+/* Keep nav on the right */
+.navbar { display:flex; align-items:center; gap:16px; margin-left:auto; }
+.navbar .links, .navbar .nav-links { display:flex; gap:12px; margin-left:auto; }
+
+
+.navbar .brand { display: none; }
