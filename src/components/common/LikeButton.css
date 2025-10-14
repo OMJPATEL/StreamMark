@@ -9,6 +9,7 @@
   color: inherit;
   cursor: pointer;
   transition: transform 0.1s ease, background 0.2s ease, border-color 0.2s ease;
+  width: 44px;
 }
 
 .like-btn:hover {
