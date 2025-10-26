@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { isLiked, toggle } from "./MovieLikes";
+import { useLikes } from "../../hook/userlike"; 
+import type { LikedItem } from "../../services/likesService";
 import "./movie.css";
 
 type Props = {
@@ -12,18 +12,11 @@ type Props = {
 };
 
 export default function MovieLikeButton({ movie }: Props) {
-  const [liked, setLiked] = useState(false);
-
-  useEffect(() => {
-    setLiked(isLiked(movie.id));
-  }, [movie.id]);
-
-  const onClick = () => {
-    setLiked(toggle({ ...movie, category: "Movies" }));
-  };
+  const item: LikedItem = { ...movie, category: "Movies" };
+  const { liked, toggleLike } = useLikes(item);
 
   return (
-    <button className={`like-btn ${liked ? "liked" : ""}`} onClick={onClick}>
+    <button className={`like-btn ${liked ? "liked" : ""}`} onClick={toggleLike}>
       {liked ? "Liked" : "Like"}
     </button>
   );
