@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { isLiked, toggle } from "./funfactsLikes";
+import { useLikes } from "../../hook/userlike"; 
+import type { LikedItem } from "../../services/likesService";
 import "./FunFacts.css";
 
 type Props = {
@@ -11,22 +11,13 @@ type Props = {
 };
 
 export default function FunLikeButton({ video }: Props) {
-  const [liked, setLiked] = useState(false);
-
-  useEffect(() => {
-    setLiked(isLiked(video.id));
-  }, [video.id]);
-
-  function handleClick() {
-    setLiked(
-      toggle({ ...video, category: "Fun Fact" })
-    );
-  }
+  const item: LikedItem = { ...video, category: "Fun Fact" };
+  const { liked, toggleLike } = useLikes(item);
 
   return (
     <button
       className={`like-btn ${liked ? "liked" : ""}`}
-      onClick={handleClick}
+      onClick={toggleLike}
     >
       {liked ? "Liked" : "Like"}
     </button>
