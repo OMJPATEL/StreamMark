@@ -1,26 +1,26 @@
-import videos from "../../data/educational-videos.json";
 import "./Educational_Component.css";
 import { useState } from "react";
 import EduLikeButton from "../Educational/EduLikeButton";
+import { useEducational } from "../../hook/useEducational";
 
 type Video = {
   id: string;
   title: string;
-  channel: string;
+  channel?: string;
   url: string;
 };
 
 function EducationalComponent() {
-  const hasVideos = Array.isArray(videos) && videos.length > 0;
+  const { items } = useEducational();
+
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredVideos = hasVideos
-    ? videos.filter(
-        (video: Video) =>
-          video.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          video.channel.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    : [];
+  const filteredVideos: Video[] = items.filter((video) => {
+    const q = searchTerm.toLowerCase();
+    const titleMatch = video.title.toLowerCase().includes(q);
+    const channelMatch = (video.channel ?? "").toLowerCase().includes(q);
+    return titleMatch || channelMatch;
+  });
 
   return (
     <section id="educational" className="educational-component">
@@ -33,14 +33,12 @@ function EducationalComponent() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        {searchTerm && (
-          <button onClick={() => setSearchTerm("")}>Clear</button>
-        )}
+        {searchTerm && <button onClick={() => setSearchTerm("")}>Clear</button>}
       </div>
 
       {filteredVideos.length > 0 ? (
         <ul className="video-grid" aria-label="Educational videos">
-          {filteredVideos.map((video: Video) => (
+          {filteredVideos.map((video) => (
             <li key={video.id} className="video-card">
               <div className="video-frame">
                 <iframe
@@ -57,13 +55,12 @@ function EducationalComponent() {
                 <span className="video-channel">{video.channel}</span>
               </div>
 
-              
               <div className="actions">
                 <EduLikeButton
                   video={{
                     id: video.id,
                     title: video.title,
-                    channel: video.channel,
+                    channel: video.channel ?? "",
                     url: video.url,
                     category: "Education",
                   }}
