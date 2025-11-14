@@ -261,19 +261,19 @@ footer,
   margin-top: auto;
 }
 
-/* Hide the small brand when on the Home route (big header already present) */
+
 .route-home .navbar .brand { display: none; }
 
-/* Always keep nav links to the right */
+
 .navbar .nav-links { margin-left: auto; }
 
-/* Center the Home welcome box */
+
 .route-home main {
   display: flex;
   justify-content: center;
 }
 
-/* Top header + nav layout */
+
 .top-container {
   display: flex;
   align-items: center;
@@ -281,7 +281,7 @@ footer,
   gap: 16px;
 }
 
-/* Keep the main brand header pinned left */
+
 header.site-header {
   text-align: left;
   margin: 24px 0 0 28px;
@@ -291,5 +291,5 @@ header.site-header {
 .navbar { display:flex; align-items:center; gap:16px; margin-left:auto; }
 .navbar .links, .navbar .nav-links { display:flex; gap:12px; margin-left:auto; }
 
-/* Hide small brand in navbar (Header shows the brand) */
+
 .navbar .brand { display: none; }

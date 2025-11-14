@@ -1,5 +1,7 @@
-import movies from "../../data/movie.json";
-
+import { moviesRepository } from "../../repositories/movieRepository";
+import { useState } from "react";
+import "./movie.css";
+import MovieLikeButton from "./MovieLikeButton";
 
 type Movie = {
   title: string;
@@ -9,23 +11,59 @@ type Movie = {
 };
 
 export default function Movies() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const allMovies = moviesRepository.getAll();
+
+  const filteredMovies = allMovies.filter((m: Movie) =>
+    m.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    m.year.toString().includes(searchTerm)
+  );
   return (
     <section id="movies" className="movies-section">
+
+      <div className="search-row">
+        <input
+          type="text"
+          placeholder="Search movies..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        {searchTerm && (
+          <button onClick={() => setSearchTerm("")}>Clear</button>
+        )}
+      </div>
+
       <h2>Movies List</h2>
-      {movies.map((m: Movie, i: number) => (
-        <div key={i}>
-          <img
-            src={m.poster}
-            alt={m.title}
-            width={120}
-            style={{ cursor: "pointer" }}
-          />
-          <h3>
-            {m.title} ({m.year})
-          </h3>
-          <p>{m.description}</p>
-        </div>
-      ))}
+      {filteredMovies.length > 0 ? (
+        filteredMovies.map((m: Movie, i: number) => (
+          <div key={i}>
+            <img
+              src={m.poster}
+              alt={m.title}
+              width={120}
+              style={{ cursor: "pointer" }}
+            />
+            <h3>
+              {m.title} ({m.year})
+            </h3>
+            <p>{m.description}</p>
+            <MovieLikeButton
+              movie={{
+                id: String(i),
+                title: m.title,
+                year: m.year,
+                poster: m.poster,
+              }}
+            />
+          </div>
+        ))
+      ) : (
+        <p className="muted">
+          {searchTerm
+            ? `No movies found for "${searchTerm}".`
+            : "No movies available."}
+        </p>
+      )}
     </section>
   );
 }

@@ -8,6 +8,7 @@ import "./components/Movie/movie.css"
 import FunFacts from "./components/FunFacts/FunFacts"
 import Music from "./components/Music/Music"
 import Home from "./components/Home/Home"
+import LikedPage from "./components/Liked/LikedPage"
 
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/funfacts" element={<FunFacts />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/music" element={<Music />} />
+          <Route path="/liked" element={<LikedPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
