@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { funFactsRepository } from "../../repositories/funFactsRepository";
+import { useFunFacts } from "../../hook/useFunFacts";
 import VideoCard from "./VideoCard";
 import "../../../src/components/FunFacts/FunFacts.css"
 
 function FunFacts() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const funfacts = funFactsRepository.getAll();
+  const { funfacts } = useFunFacts();
 
   return (
     <section className="funfacts" id="funfacts">
