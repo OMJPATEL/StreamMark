@@ -1,5 +1,3 @@
-import { likesRepository } from "../repositories/likesRepository";
-
 export type LikedItem = {
     id: string;
     title: string;
@@ -10,23 +8,43 @@ export type LikedItem = {
     channel?: string;
 };
 
+const KEY = "liked_videos_v1" ;
+
+function readStore(): Record<string, LikedItem> {
+  try {
+    const raw = localStorage.getItem(KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeStore(store: Record<string, LikedItem>) {
+    try {
+        localStorage.setItem(KEY, JSON.stringify(store));
+        window.dispatchEvent(new StorageEvent("storage", {key: KEY}));
+    } catch {}
+}
 
 export const likesService = {
-    getAll(): LikedItem[] {
-    return likesRepository.getAll();
+  getAll: (): LikedItem[] => Object.values(readStore()),
+  isLiked: (id: string): boolean => Boolean(readStore()[id]),
+  like: (item: LikedItem) => {
+    const store = readStore();
+    store[item.id] = item;
+    writeStore(store);
   },
-
-  isLiked(id: string): boolean {
-    return likesRepository.isLiked(id);
+  unlike: (id: string) => {
+    const store = readStore();
+    delete store[id];
+    writeStore(store);
   },
-
-  toggle(item: LikedItem): boolean {
-    if (likesRepository.isLiked(item.id)) {
-      likesRepository.remove(item.id);
+  toggle: (item: LikedItem): boolean => {
+    if (likesService.isLiked(item.id)) {
+      likesService.unlike(item.id);
       return false;
-    } else {
-      likesRepository.add(item);
-      return true;
     }
+    likesService.like(item);
+    return true;
   },
 };

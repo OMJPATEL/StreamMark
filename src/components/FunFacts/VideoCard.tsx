@@ -1,7 +1,6 @@
 import FunLikeButton from "./FunLikeButton";
 
 type Video = {
-  id: string;
   url: string;
   title: string;
   description: string;
@@ -25,7 +24,7 @@ function VideoCard({ video }: VideoCardProps) {
       <p>{video.description}</p>
       <FunLikeButton
         video={{
-          id: video.id,
+          id: video.url,      
           title: video.title,
           url: video.url,
         }}
