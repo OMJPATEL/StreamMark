@@ -25,6 +25,9 @@ export const likesService = {
     if (likesRepository.isLiked(item.id)) {
       likesRepository.unlike(item.id);
       return false;
+    } else {
+      likesRepository.add(item);
+      return true;
     }
     likesRepository.like(item);
     return true;

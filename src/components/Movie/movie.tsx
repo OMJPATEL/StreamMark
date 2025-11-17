@@ -1,4 +1,4 @@
-import movies from "../../data/movie.json";
+import { moviesRepository } from "../../repositories/movieRepository";
 import { useState } from "react";
 import "./movie.css";
 import MovieLikeButton from "./MovieLikeButton";
@@ -12,8 +12,9 @@ type Movie = {
 
 export default function Movies() {
   const [searchTerm, setSearchTerm] = useState("");
+  const allMovies = moviesRepository.getAll();
 
-  const filteredMovies = movies.filter((m: Movie) =>
+  const filteredMovies = allMovies.filter((m: Movie) =>
     m.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     m.year.toString().includes(searchTerm)
   );
