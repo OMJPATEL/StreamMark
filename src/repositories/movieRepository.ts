@@ -1,6 +1,5 @@
-import movies from "../data/movie.json";
-
 export type Movie = {
+  id: string;
   title: string;
   year: number;
   poster: string;
@@ -8,9 +7,13 @@ export type Movie = {
 };
 
 export const moviesRepository = {
-  getAll: (): Movie[] => movies,
-  getByTitle: (title: string): Movie[] =>
-    movies.filter((m) =>
-      m.title.toLowerCase().includes(title.toLowerCase())
-    ),
+  getAll: async (): Promise<Movie[]> => {
+    const res = await fetch("http://localhost:3000/api/v1/movies");
+    return res.json();
+  },
+
+  getByTitle: async (title: string): Promise<Movie[]> => {
+    const res = await fetch(`http://localhost:3000/api/v1/movies?search=${title}`);
+    return res.json();
+  },
 };
