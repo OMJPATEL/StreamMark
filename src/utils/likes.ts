@@ -1,22 +1,27 @@
 
-export type LikedVideo = {
-  id: string;
-  title: string;
-  channel?: string;
-  url?: string;
-  thumbnail?: string;
-  category: "Education" | "Music" | "Fun Fact" | "Movies" | string;
-};
+import {
+  likesService,
+  type LikedItem,
+} from "../services/likesService";
 
-const KEY = "liked_videos_v1";
+export type LikedVideo = LikedItem;
 
-function readStore(): Record<string, LikedVideo> {
-  try { const raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : {}; } catch { return {}; }
+export function getAllLiked(): LikedVideo[] {
+  return likesService.getAll();
 }
-function writeStore(store: Record<string, LikedVideo>) { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch {} }
 
-export function getAllLiked(): LikedVideo[] { return Object.values(readStore()); }
-export function isLiked(id: string): boolean { return Boolean(readStore()[id]); }
-export function like(v: LikedVideo) { const s = readStore(); s[v.id] = v; writeStore(s); }
-export function unlike(id: string) { const s = readStore(); delete s[id]; writeStore(s); }
-export function toggle(v: LikedVideo): boolean { if (isLiked(v.id)) { unlike(v.id); return false; } like(v); return true; }
+export function isLiked(id: string): boolean {
+  return likesService.isLiked(id);
+}
+
+export function like(v: LikedVideo): void {
+  likesService.like(v);
+}
+
+export function unlike(id: string): void {
+  likesService.unlike(id);
+}
+
+export function toggle(v: LikedVideo): boolean {
+  return likesService.toggle(v);
+}

@@ -1,21 +1,46 @@
-import type { LikedItem } from "../services/likesService";
 
-let likedItems: Record<string, LikedItem> = {};
+export type LikedCategory =
+  | "Fun Fact"
+  | "Movies"
+  | "Education"
+  | "Music"
+  | string;
+
+export type LikedItem = {
+  id: string;
+  title: string;
+  category: LikedCategory;
+  url?: string;
+  year?: number;
+  poster?: string;
+  channel?: string;
+  thumbnail?: string;
+};
+
+let store: Record<string, LikedItem> = {};
 
 export const likesRepository = {
   getAll(): LikedItem[] {
-    return Object.values(likedItems);
+    return Object.values(store);
+  },
+
+  getById(id: string): LikedItem | undefined {
+    return store[id];
   },
 
   isLiked(id: string): boolean {
-    return !!likedItems[id];
+    return id in store;
   },
 
-  add(item: LikedItem) {
-    likedItems[item.id] = item;
+  like(item: LikedItem): void {
+    store[item.id] = item;
   },
 
-  remove(id: string) {
-    delete likedItems[id];
+  unlike(id: string): void {
+    delete store[id];
+  },
+
+  clear(): void {
+    store = {};
   },
 };
