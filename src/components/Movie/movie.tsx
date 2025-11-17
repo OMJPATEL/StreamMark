@@ -1,23 +1,20 @@
-import { moviesRepository } from "../../repositories/movieRepository";
 import { useState } from "react";
+import { useMovies } from "../../hook/useMovies";
 import "./movie.css";
 import MovieLikeButton from "./MovieLikeButton";
 
-type Movie = {
-  title: string;
-  year: number;
-  poster: string;
-  description: string;
-};
-
 export default function Movies() {
   const [searchTerm, setSearchTerm] = useState("");
-  const allMovies = moviesRepository.getAll();
+  const { movies } = useMovies();
 
-  const filteredMovies = allMovies.filter((m: Movie) =>
-    m.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    m.year.toString().includes(searchTerm)
-  );
+  const filteredMovies = movies.filter((m) => {
+    const q = searchTerm.toLowerCase();
+    return (
+      m.title.toLowerCase().includes(q) ||
+      m.year.toString().includes(searchTerm)
+    );
+  });
+
   return (
     <section id="movies" className="movies-section">
 
@@ -35,8 +32,8 @@ export default function Movies() {
 
       <h2>Movies List</h2>
       {filteredMovies.length > 0 ? (
-        filteredMovies.map((m: Movie, i: number) => (
-          <div key={i}>
+        filteredMovies.map((m) => (
+          <div key={m.id}>
             <img
               src={m.poster}
               alt={m.title}
@@ -49,7 +46,7 @@ export default function Movies() {
             <p>{m.description}</p>
             <MovieLikeButton
               movie={{
-                id: String(i),
+                id: m.id,
                 title: m.title,
                 year: m.year,
                 poster: m.poster,
