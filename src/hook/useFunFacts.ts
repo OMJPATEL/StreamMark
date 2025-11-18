@@ -2,15 +2,19 @@ import { useState, useEffect } from "react";
 import { funFactsService } from "../services/funFactsService";
 import type { FunFact } from "../repositories/funFactsRepository";
 
-type FunFactData = Record<string, FunFact[]>;
-
 export function useFunFacts() {
-  const [funfacts, setFunfacts] = useState<FunFactData>({});
+  const [groupedFacts, setGroupedFacts] = useState<Record<string, FunFact[]>>({});
 
   useEffect(() => {
-    const data = funFactsService.getAll();
-    setFunfacts(data);
+    funFactsService.getAll().then((list) => {
+      const grouped = list.reduce((acc: Record<string, FunFact[]>, item: FunFact) => {
+        if (!acc[item.category]) acc[item.category] = [];
+        acc[item.category].push(item);
+        return acc;
+      }, {});
+      setGroupedFacts(grouped);
+    });
   }, []);
-
-  return { funfacts };
+ 
+  return { funfacts: groupedFacts };
 }

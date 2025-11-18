@@ -38,8 +38,8 @@ function FunFacts() {
                   video.description.toLowerCase().includes(q)
                 );
               })
-              .map((video, index) => (
-              <VideoCard key={category + index} video={video} />
+              .map((video) => (
+              <VideoCard key={video.id} video={video} />
             ))}
           </div>
         </article>
