@@ -1,4 +1,3 @@
-
 export type LikedCategory =
   | "Fun Fact"
   | "Movies"
@@ -7,7 +6,7 @@ export type LikedCategory =
   | string;
 
 export type LikedItem = {
-  id: string;
+  id: string;              
   title: string;
   category: LikedCategory;
   url?: string;
@@ -17,30 +16,24 @@ export type LikedItem = {
   thumbnail?: string;
 };
 
-let store: Record<string, LikedItem> = {};
-
 export const likesRepository = {
-  getAll(): LikedItem[] {
-    return Object.values(store);
+
+  async getAll(): Promise<LikedItem[]> {
+    const response = await fetch("http://localhost:3000/api/v1/liked");
+    return response.json();
   },
 
-  getById(id: string): LikedItem | undefined {
-    return store[id];
+  async add(data: LikedItem | any): Promise<void> {
+    await fetch("http://localhost:3000/api/v1/liked", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
   },
 
-  isLiked(id: string): boolean {
-    return id in store;
-  },
-
-  like(item: LikedItem): void {
-    store[item.id] = item;
-  },
-
-  unlike(id: string): void {
-    delete store[id];
-  },
-
-  clear(): void {
-    store = {};
+  async remove(id: string): Promise<void> {
+    await fetch('http://localhost:3000/api/v1/liked/${id}', {
+      method: "DELETE",
+    });
   },
 };

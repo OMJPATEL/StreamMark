@@ -1,7 +1,7 @@
 import "./Educational_Component.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import EduLikeButton from "../Educational/EduLikeButton";
-import { useEducational } from "../../hook/useEducational";
+import { educationalService } from "../../services/educationalService";
 
 type Video = {
   id: string;
@@ -11,9 +11,14 @@ type Video = {
 };
 
 function EducationalComponent() {
-  const { items } = useEducational();
-
+  const [items, setItems] = useState<Video[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    educationalService.getEducational().then((data) => {
+      setItems(data);
+    });
+  }, []);
 
   const filteredVideos: Video[] = items.filter((video) => {
     const q = searchTerm.toLowerCase();

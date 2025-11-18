@@ -1,32 +1,49 @@
-import { educationalItems } from "../testdata/educationalItems";
-import type { EducationalItem } from "../testdata/educationalItems";
-
-let items = [...educationalItems]; 
-
-export type CreateEducationalItem = Omit<EducationalItem, "id"> & { id?: string };
-
 export const educationalRepository = {
-  create: (item: CreateEducationalItem): EducationalItem => {
-    const id = item.id ?? `edu-${Math.random().toString(36).slice(2,8)}`;
-    const newItem: EducationalItem = { ...item, id };
-    items.push(newItem);
-    return newItem;
+
+  async getAll() {
+    const res = await fetch("http://localhost:3000/api/v1/educational");
+    return res.json();
   },
 
-  getAll: (): EducationalItem[] => [...items],
-  getById: (id: string): EducationalItem | undefined => items.find(i => i.id === id),
-  getByTopic: (topic: string): EducationalItem[] => items.filter(i => i.topic.toLowerCase() === topic.toLowerCase()),
-
-  update: (id: string, patch: Partial<Omit<EducationalItem, "id">>): EducationalItem | undefined => {
-    const idx = items.findIndex(i => i.id === id);
-    if (idx === -1) return undefined;
-    items[idx] = { ...items[idx], ...patch };
-    return items[idx];
+ 
+  async getById(id: string) {
+    const res = await fetch(`http://localhost:3000/api/v1/educational/${id}`);
+    return res.json();
   },
 
-  remove: (id: string): boolean => {
-    const prevLen = items.length;
-    items = items.filter(i => i.id != id);
-    return items.length !== prevLen;
-  }
+ 
+  async getByTopic(topic: string) {
+    const items = await educationalRepository.getAll();
+    return items.filter(
+      (i: any) => i.topic.toLowerCase() === topic.toLowerCase()
+    );
+  },
+
+
+  async create(item: Record<string, unknown>) {
+    const res = await fetch("http://localhost:3000/api/v1/educational", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(item),
+    });
+    return res.json();
+  },
+
+ 
+  async update(id: string, patch: any) {
+    const res = await fetch(`http://localhost:3000/api/v1/educational/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(patch),
+    });
+    return res.json();
+  },
+
+ 
+  async remove(id: string) {
+    await fetch(`http://localhost:3000/api/v1/educational/${id}`, {
+      method: "DELETE",
+    });
+    return true;
+  },
 };

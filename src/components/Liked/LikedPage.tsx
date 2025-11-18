@@ -1,13 +1,23 @@
 import { useEffect, useMemo, useState } from "react";
-import { getAllLiked, unlike } from "../../utils/likes";
-import type { LikedVideo } from "../../utils/likes";
+import { likesService } from "../../services/likesService";
 import "./LikedPage.css";
+
+type LikedVideo = {
+  id: string;
+  title: string;
+  url?: string;
+  channel?: string;
+  category: string;
+};
 
 type Grouped = Record<string, LikedVideo[]>;
 
 export default function LikedPage() {
   const [items, setItems] = useState<LikedVideo[]>([]);
-  const refresh = () => setItems(getAllLiked());
+
+  const refresh = () => {
+    likesService.getAllLikes().then(setItems);
+  };
 
   useEffect(() => {
     refresh();
@@ -15,11 +25,12 @@ export default function LikedPage() {
 
   const grouped: Grouped = useMemo(() => {
     const out: Grouped = {
-      "Education": [],
-      "Music": [],
+      Education: [],
+      Music: [],
       "Fun Fact": [],
-      "Movies": []
+      Movies: [],
     };
+
     for (const v of items) {
       (out[v.category] ?? (out[v.category] = [])).push(v);
     }
@@ -27,8 +38,7 @@ export default function LikedPage() {
   }, [items]);
 
   const remove = (id: string) => {
-    unlike(id);
-    refresh();
+    likesService.removeLike(id).then(refresh);
   };
 
   const Section = ({ title }: { title: keyof Grouped | string }) => (
@@ -40,12 +50,7 @@ export default function LikedPage() {
           {grouped[title as string].map((v) => (
             <li key={v.id} className="liked-item">
               <div className="meta">
-                <a
-                  className="title"
-                  href={v.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a className="title" href={v.url} target="_blank" rel="noreferrer">
                   {v.title}
                 </a>
                 {v.channel && <span className="channel">{v.channel}</span>}
@@ -58,7 +63,7 @@ export default function LikedPage() {
           ))}
         </ul>
       ) : (
-        <div className="liked-empty" />
+        <div className="liked-empty"></div>
       )}
     </section>
   );
@@ -66,6 +71,7 @@ export default function LikedPage() {
   return (
     <div className="liked-page">
       <h2 className="liked-title">Liked Videos</h2>
+
       <Section title="Education" />
       <Section title="Music" />
       <Section title="Fun Fact" />
