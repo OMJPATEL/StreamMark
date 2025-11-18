@@ -1,27 +1,51 @@
 import { educationalRepository } from "../repositories/educationalRepository";
-import type { EducationalItem } from "../testdata/educationalItems";
 
 export const educationalService = {
-  list: (): EducationalItem[] => educationalRepository.getAll(),
 
-  listTopics: (): string[] => {
-    const set = new Set(educationalRepository.getAll().map(i => i.topic));
+  getEducational: async () => {
+    return educationalRepository.getAll();
+  },
+
+  
+  list: async () => {
+    return educationalRepository.getAll();
+  },
+
+  listTopics: async () => {
+    const items = await educationalRepository.getAll();
+    const set = new Set(items.map((i: any) => i.topic));
     return Array.from(set).sort();
   },
 
-  search: (query: string): EducationalItem[] => {
+  search: async (query: string) => {
     const q = query.trim().toLowerCase();
-    if (!q) return educationalRepository.getAll();
-    return educationalRepository.getAll().filter(i =>
+    const items = await educationalRepository.getAll();
+
+    if (!q) return items;
+
+    return items.filter((i: any) =>
       i.title.toLowerCase().includes(q) ||
       (i.channel?.toLowerCase().includes(q) ?? false) ||
       i.topic.toLowerCase().includes(q)
     );
   },
 
-  byTopic: (topic: string): EducationalItem[] => educationalRepository.getByTopic(topic),
+  byTopic: async (topic: string) => {
+    const items = await educationalRepository.getAll();
+    return items.filter(
+      (i: any) => i.topic.toLowerCase() === topic.toLowerCase()
+    );
+  },
 
-  add: (item: Omit<EducationalItem, "id"> & { id?: string }): EducationalItem => educationalRepository.create(item),
-  updateTitle: (id: string, title: string) => educationalRepository.update(id, { title }),
-  remove: (id: string) => educationalRepository.remove(id),
+  add: (item: any) => {
+    return educationalRepository.create(item);
+  },
+
+  updateTitle: (id: string, title: string) => {
+    return educationalRepository.update(id, { title });
+  },
+
+  remove: (id: string) => {
+    return educationalRepository.remove(id);
+  },
 };
