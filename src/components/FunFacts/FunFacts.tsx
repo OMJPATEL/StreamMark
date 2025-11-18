@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useFunFacts } from "../../hook/useFunFacts";
+import { funFactsRepository } from "../../repositories/funFactsRepository";
 import VideoCard from "./VideoCard";
 import "../../../src/components/FunFacts/FunFacts.css"
 
 function FunFacts() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const { funfacts } = useFunFacts();
+  const funfacts = funFactsRepository.getAll();
 
   return (
     <section className="funfacts" id="funfacts">
@@ -38,8 +38,8 @@ function FunFacts() {
                   video.description.toLowerCase().includes(q)
                 );
               })
-              .map((video) => (
-              <VideoCard key={video.id} video={video} />
+              .map((video, index) => (
+              <VideoCard key={category + index} video={video} />
             ))}
           </div>
         </article>
