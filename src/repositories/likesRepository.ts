@@ -32,7 +32,7 @@ export const likesRepository = {
   },
 
   async remove(id: string): Promise<void> {
-    await fetch('http://localhost:3000/api/v1/liked/${id}', {
+    await fetch(`http://localhost:3000/api/v1/liked/${id}`, {
       method: "DELETE",
     });
   },
