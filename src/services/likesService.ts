@@ -1,34 +1,15 @@
-
-import {
-  likesRepository,
-  type LikedItem,
-} from "../repositories/likesRepository";
+import { likesRepository } from "../repositories/likesRepository";
 
 export const likesService = {
-  getAll(): LikedItem[] {
+  getAllLikes() {
     return likesRepository.getAll();
   },
 
-  isLiked(id: string): boolean {
-    return likesRepository.isLiked(id);
+  addLike(item) {
+    return likesRepository.add(item);
   },
 
-  like(item: LikedItem): void {
-    likesRepository.like(item);
-  },
-
-  unlike(id: string): void {
-    likesRepository.unlike(id);
-  },
-
-  toggle(item: LikedItem): boolean {
-    if (likesRepository.isLiked(item.id)) {
-      likesRepository.unlike(item.id);
-      return false;
-    }
-    likesRepository.like(item);
-    return true;
+  removeLike(id: string) {
+    return likesRepository.remove(id);
   },
 };
-
-export type { LikedItem };
