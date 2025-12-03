@@ -6,7 +6,7 @@ export type LikedCategory =
   | string;
 
 export type LikedItem = {
-  id: string;              
+  id: string;
   title: string;
   category: LikedCategory;
   url?: string;
@@ -16,24 +16,50 @@ export type LikedItem = {
   thumbnail?: string;
 };
 
-export const likesRepository = {
+const BASE_URL = "http://localhost:3000/api/v1/liked";
 
-  async getAll(): Promise<LikedItem[]> {
-    const response = await fetch("http://localhost:3000/api/v1/liked");
+export const likesRepository = {
+  async getMine(token: string): Promise<LikedItem[]> {
+    const response = await fetch(`${BASE_URL}/my-liked`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch liked items");
+    }
+
     return response.json();
   },
 
-  async add(data: LikedItem | any): Promise<void> {
-    await fetch("http://localhost:3000/api/v1/liked", {
+  async add(data: LikedItem | any, token: string): Promise<LikedItem> {
+    const response = await fetch(BASE_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(data),
     });
+
+    if (!response.ok) {
+      throw new Error("Failed to add liked item");
+    }
+
+    return response.json();
   },
 
-  async remove(id: string): Promise<void> {
-    await fetch(`http://localhost:3000/api/v1/liked/${id}`, {
+  async remove(id: string, token: string): Promise<void> {
+    const response = await fetch(`${BASE_URL}/${id}`, {
       method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
+
+    if (!response.ok) {
+      throw new Error("Failed to remove liked item");
+    }
   },
 };

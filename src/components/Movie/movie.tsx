@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMovies } from "../../hook/useMovies";
 import "./movie.css";
-import MovieLikeButton from "./MovieLikeButton";
+import LikeButton from "../common/LikeButton";
 
 export default function Movies() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -44,13 +44,15 @@ export default function Movies() {
               {m.title} ({m.year})
             </h3>
             <p>{m.description}</p>
-            <MovieLikeButton
-              movie={{
+            <LikeButton
+              item={{
                 id: m.id,
                 title: m.title,
                 year: m.year,
                 poster: m.poster,
+                category: "Movies",
               }}
+              ariaLabel={`Like ${m.title}`}
             />
           </div>
         ))

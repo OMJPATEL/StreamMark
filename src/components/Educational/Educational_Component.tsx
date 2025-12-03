@@ -1,6 +1,6 @@
 import "./Educational_Component.css";
 import { useState, useEffect } from "react";
-import EduLikeButton from "../Educational/EduLikeButton";
+import LikeButton from "../common/LikeButton";
 import { educationalService } from "../../services/educationalService";
 
 type Video = {
@@ -61,15 +61,15 @@ function EducationalComponent() {
               </div>
 
               <div className="actions">
-                <EduLikeButton
-                  video={{
+                <LikeButton
+                  item={{
                     id: video.id,
                     title: video.title,
                     channel: video.channel ?? "",
                     url: video.url,
                     category: "Education",
                   }}
-                  ariaLabel={'Like ${video.title}'}
+                  ariaLabel={`Like ${video.title}`}
                 />
               </div>
             </li>
