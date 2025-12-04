@@ -1,14 +1,16 @@
+import funfactsData from "../data/funfacts.json"
+
 export type FunFact = {
-    id: string;
     url: string;
     title: string;
     description: string;
-    category: string;
 };
 
+type FunFactData = Record<string, FunFact[]>;
+
+const funfacts = funfactsData as FunFactData;
+
 export const funFactsRepository = {
-  getAll: async (): Promise<FunFact[]> => {
-    const res = await fetch("http://localhost:3000/api/v1/funfacts");
-    return res.json();
-  },
+  getAll: (): FunFactData => funfacts,
+  getByCategory: (category: string): FunFact[] => funfacts[category] || [],
 };

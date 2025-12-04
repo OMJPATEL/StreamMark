@@ -1,7 +1,6 @@
-import FunLikeButton from "./FunLikeButton";
+import LikeButton from "../common/LikeButton";
 
 type Video = {
-  id: string;
   url: string;
   title: string;
   description: string;
@@ -23,12 +22,14 @@ function VideoCard({ video }: VideoCardProps) {
       ></iframe>
       <h3>{video.title}</h3>
       <p>{video.description}</p>
-      <FunLikeButton
-        video={{
-          id: video.id,
+      <LikeButton
+        item={{
+          id: video.url,
           title: video.title,
           url: video.url,
+          category: "Fun Fact",
         }}
+        ariaLabel={`Like ${video.title}`}
       />
     </div>
   );

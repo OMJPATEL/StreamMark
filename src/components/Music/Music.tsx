@@ -48,7 +48,7 @@ function Music() {
               <p className="duration">Duration: {song.duration}</p>
               
               <LikeButton
-                video={{
+                item={{
                   id: String(song.id),
                   title: song.title,
                   channel: song.artist,

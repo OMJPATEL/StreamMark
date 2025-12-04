@@ -11,6 +11,7 @@ import Home from "./components/Home/Home"
 import LikedPage from "./components/Liked/LikedPage"
 
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { SignIn, SignUp, UserButton, SignedIn, SignedOut } from "@clerk/clerk-react";
 
 function App() {
   const { pathname } = useLocation()
@@ -21,17 +22,51 @@ function App() {
       <div className="top-container">
         <Header />
         <NavBar />
+
+        {/* Login / User menu */}
+        <div style={{ position: "absolute", top: 20, right: 20 }}>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <a href="/sign-in" style={{ fontSize: "18px", color: "white" }}>Login</a>
+          </SignedOut>
+        </div>
       </div>
 
       <main>
         <Routes>
+
+          {/* Auth Routes */}
+          <Route path="/sign-in" element={<SignIn routing="path" path="/sign-in" />} />
+          <Route path="/sign-up" element={<SignUp routing="path" path="/sign-up" />} />
+
+          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/educational" element={<EducationalComponent />} />
           <Route path="/funfacts" element={<FunFacts />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/music" element={<Music />} />
-          <Route path="/liked" element={<LikedPage />} />
+
+          {/* Protected Route */}
+          <Route
+            path="/liked"
+            element={
+              <>
+                <SignedIn>
+                  <LikedPage />
+                </SignedIn>
+
+                <SignedOut>
+                  <Navigate to="/sign-in" />
+                </SignedOut>
+              </>
+            }
+          />
+
+          {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
+
         </Routes>
       </main>
 
