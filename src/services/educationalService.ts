@@ -3,12 +3,11 @@ import { educationalRepository } from "../repositories/educationalRepository";
 export const educationalService = {
 
   getEducational: async () => {
-    return educationalRepository.getAll();
+    return await educationalRepository.getAll();
   },
 
-  
   list: async () => {
-    return educationalRepository.getAll();
+    return await educationalRepository.getAll();
   },
 
   listTopics: async () => {
