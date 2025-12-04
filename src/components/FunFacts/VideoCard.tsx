@@ -2,6 +2,7 @@ import LikeButton from "../common/LikeButton";
 import Comments from "./Comments";
 
 type Video = {
+  id: string;
   url: string;
   title: string;
   description: string;
@@ -26,7 +27,7 @@ function VideoCard({ video }: VideoCardProps) {
       
       <LikeButton
         item={{
-          id: video.url,
+          id: video.id,
           title: video.title,
           url: video.url,
           category: "Fun Fact",
