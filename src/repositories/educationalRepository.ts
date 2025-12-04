@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "../config/api";
+
 export interface EducationalItem {
   id: string;
   title: string;
@@ -7,26 +9,25 @@ export interface EducationalItem {
 }
 
 export const educationalRepository = {
-
-  async getAll(): Promise<EducationalItem[]> {   
-    const res = await fetch("http://localhost:3000/api/v1/educational");
+  async getAll(): Promise<EducationalItem[]> {
+    const res = await fetch(`${API_BASE_URL}/api/v1/educational`);
     return res.json();
   },
 
-  async getById(id: string): Promise<EducationalItem> {  
-    const res = await fetch(`http://localhost:3000/api/v1/educational/${id}`);
+  async getById(id: string): Promise<EducationalItem> {
+    const res = await fetch(`${API_BASE_URL}/api/v1/educational/${id}`);
     return res.json();
   },
 
-  async getByTopic(topic: string): Promise<EducationalItem[]> {   
+  async getByTopic(topic: string): Promise<EducationalItem[]> {
     const items = await educationalRepository.getAll();
     return items.filter(
       (i: any) => i.topic.toLowerCase() === topic.toLowerCase()
     );
   },
 
-  async create(item: Record<string, unknown>): Promise<EducationalItem> {   
-    const res = await fetch("http://localhost:3000/api/v1/educational", {
+  async create(item: Record<string, unknown>): Promise<EducationalItem> {
+    const res = await fetch(`${API_BASE_URL}/api/v1/educational`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(item),
@@ -34,8 +35,8 @@ export const educationalRepository = {
     return res.json();
   },
 
-  async update(id: string, patch: any): Promise<EducationalItem> {   
-    const res = await fetch(`http://localhost:3000/api/v1/educational/${id}`, {
+  async update(id: string, patch: any): Promise<EducationalItem> {
+    const res = await fetch(`${API_BASE_URL}/api/v1/educational/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(patch),
@@ -43,8 +44,8 @@ export const educationalRepository = {
     return res.json();
   },
 
-  async remove(id: string): Promise<boolean> {   
-    await fetch(`http://localhost:3000/api/v1/educational/${id}`, {
+  async remove(id: string): Promise<boolean> {
+    await fetch(`${API_BASE_URL}/api/v1/educational/${id}`, {
       method: "DELETE",
     });
     return true;
