@@ -11,7 +11,7 @@ import Home from "./components/Home/Home"
 import LikedPage from "./components/Liked/LikedPage"
 
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import { SignIn, SignUp, UserButton, SignedIn, SignedOut } from "@clerk/clerk-react";
+import { SignIn, SignUp, UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 
 function App() {
   const { pathname } = useLocation()
@@ -28,8 +28,23 @@ function App() {
           <SignedIn>
             <UserButton />
           </SignedIn>
+
           <SignedOut>
-            <a href="/sign-in" style={{ fontSize: "18px", color: "white" }}>Login</a>
+            <SignInButton mode="redirect">
+              <button
+                style={{
+                  fontSize: "18px",
+                  color: "white",
+                  background: "none",
+                  border: "1px solid white",
+                  padding: "6px 12px",
+                  borderRadius: "5px",
+                  cursor: "pointer"
+                }}
+              >
+                Login
+              </button>
+            </SignInButton>
           </SignedOut>
         </div>
       </div>

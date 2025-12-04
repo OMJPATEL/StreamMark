@@ -6,9 +6,11 @@ export type MusicItem = {
   videoId: string;
 };
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export const musicRepository = {
   getAll: async (): Promise<MusicItem[]> => {
-    const res = await fetch("http://localhost:3000/api/v1/music");
+    const res = await fetch(`${API_BASE_URL}/api/v1/music`);
     return res.json();
   },
 };

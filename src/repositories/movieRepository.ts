@@ -6,14 +6,16 @@ export type Movie = {
   description: string;
 };
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export const moviesRepository = {
   getAll: async (): Promise<Movie[]> => {
-    const res = await fetch("http://localhost:3000/api/v1/movies");
+    const res = await fetch(`${API_BASE_URL}/api/v1/movies`);
     return res.json();
   },
 
   getByTitle: async (title: string): Promise<Movie[]> => {
-    const res = await fetch(`http://localhost:3000/api/v1/movies?search=${title}`);
+    const res = await fetch(`${API_BASE_URL}/api/v1/movies?search=${title}`);
     return res.json();
   },
 };
