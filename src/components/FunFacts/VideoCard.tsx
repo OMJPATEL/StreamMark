@@ -1,4 +1,5 @@
 import LikeButton from "../common/LikeButton";
+import Comments from "./Comments";
 
 type Video = {
   url: string;
@@ -22,6 +23,7 @@ function VideoCard({ video }: VideoCardProps) {
       ></iframe>
       <h3>{video.title}</h3>
       <p>{video.description}</p>
+      
       <LikeButton
         item={{
           id: video.url,
@@ -31,6 +33,7 @@ function VideoCard({ video }: VideoCardProps) {
         }}
         ariaLabel={`Like ${video.title}`}
       />
+      <Comments videoId={video.url} />
     </div>
   );
 }
