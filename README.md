@@ -1,86 +1,213 @@
-# StreamMark - Mini YouTube
- 
-## Team
-Team Name: StreamMark  
- 
-**Members:**
-- Akash Kumar - Movies  
-- Aakash Aakash -  Fun Facts 
-- Om Patel - Educational  
-- Karanveer - Music  
- 
- 
-## General Description
- 
-StreamMark is a React-based project that allows users to explore different types of content lists (movies, educational, fun facts, music).
-Each component is independently developed by a team member and then rendered together to demonstrate list rendering in React.
+# StreamMark — Full-Stack Application (Frontend + Backend)
 
- 
-The goal of the project is to practice list rendering, component modularity, and collaborative development in React while providing a simple
-interactive experience.
- 
-## User Stories
- 
-1. As a user, I want to view multiple categorized content lists (movies, educational, fun facts, music) so that I can easily explore different
-categories in one place.
- 
-2. As a user, I want each list to contain several items so that I can quickly scan and learn from the information provided.
- 
-3. As a user, I want each list to be styled consistently and neatly so that the application looks professional and is easy to navigate.
- 
+<p align="center">
+  <a href="https://stream-mark.vercel.app/">
+    <img src="https://user-images.githubusercontent.com/placeholder/logo.png" width="120"/>
+  </a>
+</p>
 
+<h2 align="center">StreamMark</h2>
 
-## Sprint 2 / Assignment 2
+<p align="center">
+A full-stack platform offering educational videos, movies, music, and fun facts — complete with likes, progress tracking, and user comments in the Fun Facts module.
+<br/><br/>
+<a href="https://stream-mark.vercel.app/"><strong>View Live App »</strong></a>
+<br/><br/>
+<a href="https://github.com/OMJPATEL/StreamMark">Frontend Repo</a>
+·
+<a href="https://github.com/OMJPATEL/streammark-backend">Backend Repo</a>
+</p>
 
-##project goals
-1. learning multi-page navgation and shared state accross page.
-2. Creating the interactive and reusable components such as forms, like buttons.
-3. Each section is developed by an individual team member and linked together using React Router for easy navigation.  
+---
 
+# 🏅 Badges
 
-##User Stories
-1. As  a user, i can interact with videos, like them, or add/remove favorites.
-2. As a user, i can search, filter whatever they want.
-3. As  a user, i can see a consistent design across all pages for a smooth experience.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Express-000000?logo=express&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Clerk-6C47FF?logo=clerk&logoColor=white&style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge"/>
+</p>
 
+---
 
-##features
-### T.1  Multi-Page Navigation + Navigation Interface
-- Users can navigate between Movies, Educational, Fun Facts, and Music pages.  
-- A `<nav>` bar is included in the layout header so it appears on every page.  
-- Each page has a link in the navigation bar, and the active page is clearly shown.
+# 📘 Table of Contents
 
-### I.1 Feature Pages
-Each major feature (Movies, Music, Fun Facts, Educational) is a separate page showing lists of videos or facts.  
+1. About the Project  
+2. Live Demo  
+3. Tech Stack  
+4. System Architecture  
+5. Features  
+6. Frontend Setup  
+7. Backend Setup  
+8. Environment Variables  
+9. Database Setup & Migrations  
+10. API Overview  
+11. Project Structure  
+12. Contributors  
+13. Contact  
 
-### I.2 Form Component
-- Each page includes search bar at the top where we can browse what we want.
+---
 
-### I.3 Element Addition / Removal
-- Users can add or remove list items dynamically .  
-- The change is reflected instantly on the page
+# 📘 About the Project
 
-## Getting Started
- 
-1. Clone the repository:
+StreamMark is a multi-feature platform. Users can:
 
-   git clone <https://github.com/OMJPATEL/StreamMark>
+- Explore educational videos  
+- Browse movies  
+- Listen to music  
+- Read/watch fun facts  
+- Like any item across categories  
+- Comment on Fun Facts  
+- Mark Educational videos as completed  
 
-2. Create Project with Vite
-To create a new React + TypeScript project with Vite:
+User security is handled through Clerk authentication.
 
-npm create vite@latest
+---
 
-After that select: 
-1. React
-2. TypeScript
+# 🚀 Live Demo
 
-3. Running the development server
+https://stream-mark.vercel.app/
+
+---
+
+# 🛠 Tech Stack
+
+Frontend: React, TS, Vite, Clerk  
+Backend: Node, Express, Prisma, PostgreSQL  
+
+---
+
+# 📐 System Architecture
+
+```mermaid
+flowchart TD
+
+A[Frontend - React + Vite] -->|API Requests| B[Backend - Express Server]
+
+B -->|ORM| C[(PostgreSQL Database)]
+
+A -->|Clerk JS SDK| D[Clerk Frontend]
+
+B -->|Clerk Server SDK| E[Clerk Backend]
+
+C -->|Stores| F[Likes]
+C -->|Stores| G[Completed Education]
+C -->|Stores| H[Comments for Fun Facts]
+C -->|Stores| I[Educational / Movies / Fun Facts / Music Data]
+```
+
+---
+
+# ⭐ Features
+
+Educational: likes + completed tracking  
+Fun Facts: likes + comments  
+Movies: likes + search  
+Music: likes  
+Global likes system  
+Clerk-secured actions  
+
+---
+
+# 🧩 Frontend Setup
+
+```
+git clone https://github.com/OMJPATEL/StreamMark
+cd StreamMark
+npm install
+```
+
+Create `.env`:
+
+```
+VITE_CLERK_PUBLISHABLE_KEY=your_key
+VITE_API_BASE_URL=http://localhost:3000
+```
+
+Run:
+
+```
 npm run dev
+```
 
+---
 
+# 🧩 Backend Setup
 
+```
+git clone https://github.com/OMJPATEL/streammark-backend
+cd streammark-backend
+npm install
+```
 
-   
- 
- 
+`.env`:
+
+```
+DATABASE_URL=postgresql://<user>:<password>@localhost:5432/streammark
+CLERK_SECRET_KEY=your_clerk_key
+PORT=3000
+FRONTEND_URL=http://localhost:5173
+```
+
+Run:
+
+```
+npm run dev
+```
+
+---
+
+# 🔐 Environment Variables
+
+Frontend:  
+- `VITE_CLERK_PUBLISHABLE_KEY`  
+- `VITE_API_BASE_URL`  
+
+Backend:  
+- `DATABASE_URL`  
+- `CLERK_SECRET_KEY`  
+- `PORT`  
+- `FRONTEND_URL`  
+
+---
+
+# 🗄 Database Setup & Migrations
+
+```
+CREATE DATABASE streammark;
+npx prisma migrate dev
+npx prisma db seed
+```
+
+---
+
+# 🌐 API Overview
+
+Educational: `/educational`  
+Movies: `/movies`  
+Music: `/music`  
+Fun Facts: `/funfacts` + comments  
+Likes: `/liked`  
+Completed: `/education-progress`  
+
+---
+
+# 🗂 Contributors
+
+Om Patel — Educational Module  
+Aakash — Fun Facts  
+Akash Kumar — Movies  
+Karanveer — Music  
+
+---
+
+# 📬 Contact
+
+LinkedIn: https://www.linkedin.com/in/patelom29  
+Live App: https://stream-mark.vercel.app/
