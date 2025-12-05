@@ -211,3 +211,12 @@ Karanveer — Music
 
 LinkedIn: https://www.linkedin.com/in/patelom29  
 Live App: https://stream-mark.vercel.app/
+
+
+
+---
+
+## 📖 Reference
+
+This project’s README layout was inspired by the open-source template created by @othneildrew.  
+Template Link: https://github.com/othneildrew/Best-README-Template
