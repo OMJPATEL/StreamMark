@@ -2,6 +2,8 @@ import "./Educational_Component.css";
 import { useState, useEffect } from "react";
 import LikeButton from "../common/LikeButton";
 import { educationalService } from "../../services/educationalService";
+import { useAuth } from "@clerk/clerk-react";
+import { educationProgressService } from "../../services/educationProgressService";
 
 type Video = {
   id: string;
@@ -14,23 +16,56 @@ function EducationalComponent() {
   const [items, setItems] = useState<Video[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const [completed, setCompleted] = useState<string[]>([]);
+  const { isSignedIn, getToken } = useAuth();
+
+  // Load all educational videos
   useEffect(() => {
     educationalService.getEducational().then((data) => {
       setItems(data);
     });
   }, []);
 
+  // Load completed videos
+  useEffect(() => {
+    const loadCompleted = async () => {
+      if (!isSignedIn) return;
+      const token = await getToken();
+      const ids = await educationProgressService.getCompleted(token!);
+      setCompleted(ids);
+    };
+
+    loadCompleted();
+  }, [isSignedIn, getToken]);
+
+  // Mark video as completed
+  const handleComplete = async (id: string) => {
+    const token = await getToken();
+    await educationProgressService.markCompleted(id, token!);
+    setCompleted((prev) => [...prev, id]);
+  };
+
+  // Remove completed video
+  const handleRemoveCompleted = async (id: string) => {
+    const token = await getToken();
+    await educationProgressService.removeCompleted(id, token!);
+    setCompleted((prev) => prev.filter((x) => x !== id));
+  };
+
+  // Filter videos based on search input
   const filteredVideos: Video[] = items.filter((video) => {
     const q = searchTerm.toLowerCase();
-    const titleMatch = video.title.toLowerCase().includes(q);
-    const channelMatch = (video.channel ?? "").toLowerCase().includes(q);
-    return titleMatch || channelMatch;
+    return (
+      video.title.toLowerCase().includes(q) ||
+      (video.channel ?? "").toLowerCase().includes(q)
+    );
   });
 
   return (
     <section id="educational" className="educational-component">
       <h2>Educational Videos</h2>
 
+      
       <div className="search-row">
         <input
           type="text"
@@ -61,6 +96,7 @@ function EducationalComponent() {
               </div>
 
               <div className="actions">
+      
                 <LikeButton
                   item={{
                     id: video.id,
@@ -71,6 +107,19 @@ function EducationalComponent() {
                   }}
                   ariaLabel={`Like ${video.title}`}
                 />
+
+                
+                {isSignedIn && (
+                  <button
+                    onClick={() => handleComplete(video.id)}
+                    disabled={completed.includes(video.id)}
+                    className="completed-btn"
+                  >
+                    {completed.includes(video.id)
+                      ? "Completed ✓"
+                      : "Mark Completed"}
+                  </button>
+                )}
               </div>
             </li>
           ))}
@@ -78,9 +127,31 @@ function EducationalComponent() {
       ) : (
         <p className="muted">
           {searchTerm
-            ? 'No videos found for "${searchTerm}".'
+            ? `No videos found for "${searchTerm}".`
             : "No educational videos yet."}
         </p>
+      )}
+
+      
+      {isSignedIn && completed.length > 0 && (
+        <div className="completed-section">
+          <h3>Completed Videos</h3>
+          <ul className="completed-list">
+            {items
+              .filter((v) => completed.includes(v.id))
+              .map((v) => (
+                <li key={v.id} className="completed-item">
+                  <span>{v.title}</span>
+                  <button
+                    className="remove-completed-btn"
+                    onClick={() => handleRemoveCompleted(v.id)}
+                  >
+                    Remove
+                  </button>
+                </li>
+              ))}
+          </ul>
+        </div>
       )}
     </section>
   );
