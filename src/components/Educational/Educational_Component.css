@@ -154,3 +154,80 @@
   font-size: 1rem;
   line-height: 1;
 }
+
+
+.completed-btn {
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #333;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.completed-btn:hover:not([disabled]) {
+  background: #444;
+  transform: translateY(-1px);
+}
+
+.completed-btn[disabled] {
+  background: #46e063;
+  cursor: default;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+
+.completed-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+}
+
+.completed-section h3 {
+  margin-bottom: 12px;
+  font-size: clamp(18px, 2.6vw, 24px);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.completed-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.completed-list li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+}
+
+.completed-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-completed-btn {
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #b43535;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.15s ease;
+}
+
+.remove-completed-btn:hover {
+  opacity: 0.85;
+}
