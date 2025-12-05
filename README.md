@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://stream-mark.vercel.app/">
-    <img src="https://user-images.githubusercontent.com/placeholder/logo.png" width="120"/>
+    <img src="./public/Stream_logo.png" width="120" />
   </a>
 </p>
 
