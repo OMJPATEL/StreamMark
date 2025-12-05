@@ -79,8 +79,100 @@ After that select:
 npm run dev
 
 
+# Sprint 5 – Authentication, Authorization, and Deployment
 
+Sprint 5 focused on adding user authentication with Clerk, managing user-specific data, and deploying both the front-end and back-end to Vercel.
 
-   
- 
- 
+## T.1 Clerk Authentication Setup
+- Clerk added to front-end and back-end.
+- SignIn, SignUp, UserButton used.
+- Back-end routes protected using Clerk middleware.
+- Session tokens verified to access protected data.
+
+## T.2 Team Vercel Deployment
+- Front-end and back-end deployed using one Vercel account.
+- Automatic deployment on push to main.
+- Environment variables added to Vercel.
+
+## T.3 Back-End User Management
+- Prisma schema updated with userId fields.
+- Migrations created for user-related changes.
+- Only required endpoints protected using Clerk authentication.
+
+## T.4 User Login and Registration
+- Users can register, log in, and log out.
+- Login link visible in navigation.
+- Guest users can access public pages; logged-in users see personalized sections.
+
+## T.5: Local Setup Instructions
+- README includes a Local Setup section.
+- Must include environment variables for both applications.
+- Instructions must include database setup and required commands.
+
+### Local Setup Instructions
+
+#### Front-End Setup
+```
+npm install
+npm run dev
+```
+
+Create a `.env.local` file:
+```
+VITE_CLERK_PUBLISHABLE_KEY=your_publishable_key
+VITE_BACKEND_URL=http://localhost:5000
+```
+
+#### Back-End Setup
+```
+npm install
+```
+
+Create a `.env` file:
+```
+DATABASE_URL="your_database_url"
+CLERK_SECRET_KEY="your_clerk_secret_key"
+PORT=5000
+```
+
+Run Prisma setup:
+```
+npx prisma migrate dev
+npx prisma generate
+```
+
+Start the server:
+```
+npm run dev
+```
+
+# I.1 Custom User-Associated Data and Session Management
+
+### Acceptance Criteria
+- At least one back-end request includes a Clerk session token.
+- Returned data must use the logged-in user's ID.
+- Components must behave differently for logged-in and logged-out users.
+
+### Implementation
+- Protected endpoints use Clerk to read the session token and extract `userId`.
+- Database queries filter data by the authenticated user's ID.
+- Logged-in users can save, view, or update their own data.
+- Guest users can browse public pages but cannot access personalized content.
+- Conditional rendering ensures pages like “My Saved Items” appear only when logged in.
+
+# Commands Used in This Sprint
+
+### `npm install`
+Installs all necessary dependencies for either the front-end or back-end.
+
+### `npm run dev`
+Starts the project in development mode.
+
+### `npx prisma migrate dev`
+Applies migrations and updates the development database.
+
+### `npx prisma generate`
+Generates the Prisma client used by the back-end to perform database operations.
+
+### `git push origin main`
+Triggers automatic deployments on Vercel for both applications.
